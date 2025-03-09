@@ -8,9 +8,7 @@
     --primary-color-rgb: 0, 168, 255;
     --accent-color: #ff69b4;
 }
-svg {
-    color: white;
-}
+
 * {
     margin: 0;
     padding: 0;
