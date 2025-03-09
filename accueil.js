@@ -713,21 +713,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new MathGame('mental');
     new MathGame('sequence');
     new MathGame('geometry');
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navCenter = document.querySelector('.nav-center');
-
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenuToggle.classList.toggle('active');
-        navCenter.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenuToggle.classList.remove('active');
-            navCenter.classList.remove('active');
-        });
-    });
 });
  const numFish = 50; // Number of fish
   const fishArray = [];
