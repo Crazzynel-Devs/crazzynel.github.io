@@ -874,5 +874,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setInterval(moveCarousel, 3000);
+        
+        // Ajouter un écouteur de redimensionnement pour ajuster le carousel
+        window.addEventListener('resize', () => {
+            index = 0; // Réinitialiser l'index lors du redimensionnement
+            track.style.transform = 'translateX(0)';
+        });
     }
 });
