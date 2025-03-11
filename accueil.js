@@ -801,6 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     // Menu hamburger
     const hamburger = document.getElementById('hamburger');
@@ -834,3 +835,44 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
         });
     }
+
+    // Fonction de décompte
+    function updateCountdown() {
+        const targetDate = new Date("March 22, 2025 10:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Mettre à jour le décompte chaque seconde
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Carousel automatique
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const items = Array.from(track.children);
+        let index = 0;
+
+        function moveCarousel() {
+            index = (index + 1) % items.length;
+            if (window.innerWidth <= 576) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            } else {
+                const itemWidth = items[0].getBoundingClientRect().width + 20; // 20px pour la marge
+                track.style.transform = `translateX(-${index * itemWidth}px)`;
+            }
+        }
+
+        setInterval(moveCarousel, 3000);
+    }
+});
