@@ -714,27 +714,29 @@ document.addEventListener('DOMContentLoaded', () => {
     new MathGame('sequence');
     new MathGame('geometry');
 
-    // Menu hamburger
+    // Gestion du menu hamburger
     document.addEventListener('DOMContentLoaded', () => {
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
         const navOverlay = document.getElementById('nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-links a');
 
         function toggleMenu() {
-            navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
             navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         }
 
         hamburger.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
 
         // Fermer le menu quand on clique sur un lien
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                navOverlay.classList.remove('active');
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
             });
         });
     });

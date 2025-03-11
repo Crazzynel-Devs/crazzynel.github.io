@@ -737,12 +737,11 @@ header h1 {
     display: block;
     width: 25px;
     height: 3px;
+    background-color: var(--text-light);
     margin: 5px 0;
-    background: var(--text-light);
     transition: var(--transition);
 }
 
-/* Overlay pour le menu mobile */
 .nav-overlay {
     display: none;
     position: fixed;
@@ -750,44 +749,26 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
 }
 
-.nav-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .nav-center.active + .nav-overlay {
-        display: block;
-        opacity: 1;
-    }
-}
-
-/* Media queries pour le responsive */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .hamburger {
         display: block;
         z-index: 1001;
-    }
-
-    .nav-container {
-        padding: 0 1rem;
     }
 
     .nav-center {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 250px;
         height: 100vh;
         background: var(--background-dark);
-        padding-top: 80px;
+        padding: 80px 20px;
         transition: var(--transition);
+        z-index: 999;
     }
 
     .nav-center.active {
@@ -796,19 +777,22 @@ header h1 {
 
     .nav-links {
         flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
-    .nav-links a {
-        font-size: 1.2rem;
+    .nav-overlay.active {
+        display: block;
     }
 
-    .logo img {
-        height: 40px;
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
     }
 
-    .contact-btn {
-        display: none;
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
     }
 }
