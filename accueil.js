@@ -713,77 +713,95 @@ document.addEventListener('DOMContentLoaded', () => {
     new MathGame('mental');
     new MathGame('sequence');
     new MathGame('geometry');
+
+    // Menu hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
 });
- const numFish = 50; // Number of fish
-  const fishArray = [];
-  const svg = document.getElementById('underwater-scene');
+
+const numFish = 50; // Number of fish
+const fishArray = [];
+const svg = document.getElementById('underwater-scene');
   
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
 
-  // Track mouse movement
-  document.addEventListener('mousemove', (event) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-  });
+// Track mouse movement
+document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+});
 
-  // Create fish and append them to the SVG as dots
-  for (let i = 0; i < numFish; i++) {
-      const fish = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      fish.setAttribute('fill', 'lightblue');
-      fish.setAttribute('r', '5');
-      fish.style.filter = 'drop-shadow(0 0 10px rgba(0, 255, 255, 0.8))';
-      svg.appendChild(fish);
+// Create fish and append them to the SVG as dots
+for (let i = 0; i < numFish; i++) {
+    const fish = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    fish.setAttribute('fill', 'lightblue');
+    fish.setAttribute('r', '5');
+    fish.style.filter = 'drop-shadow(0 0 10px rgba(0, 255, 255, 0.8))';
+    svg.appendChild(fish);
 
-      // Initial random positions and speeds for each fish
-      fishArray.push({
-          element: fish,
-          x: Math.random() * window.innerWidth, // Random x position
-          y: Math.random() * window.innerHeight, // Random y position
-          speedX: Math.random() * 2 + 0.5, // Random horizontal speed
-          speedY: Math.random() * 2 + 0.5, // Random vertical speed
-          sway: Math.random() * 0.02 - 0.01, // Sway effect for more natural motion
-          direction: Math.random() * Math.PI * 2, // Random direction
-      });
-  }
+    // Initial random positions and speeds for each fish
+    fishArray.push({
+        element: fish,
+        x: Math.random() * window.innerWidth, // Random x position
+        y: Math.random() * window.innerHeight, // Random y position
+        speedX: Math.random() * 2 + 0.5, // Random horizontal speed
+        speedY: Math.random() * 2 + 0.5, // Random vertical speed
+        sway: Math.random() * 0.02 - 0.01, // Sway effect for more natural motion
+        direction: Math.random() * Math.PI * 2, // Random direction
+    });
+}
 
-  function animateFish() {
-      fishArray.forEach(fish => {
-          // Move the fish in the direction of its speed
-          fish.x += fish.speedX * Math.cos(fish.direction);
-          fish.y += fish.speedY * Math.sin(fish.direction);
+function animateFish() {
+    fishArray.forEach(fish => {
+        // Move the fish in the direction of its speed
+        fish.x += fish.speedX * Math.cos(fish.direction);
+        fish.y += fish.speedY * Math.sin(fish.direction);
 
-          // Apply some sway to create a more fluid movement
-          fish.x += Math.sin(fish.direction) * fish.sway * 30;
-          fish.y += Math.cos(fish.direction) * fish.sway * 20;
+        // Apply some sway to create a more fluid movement
+        fish.x += Math.sin(fish.direction) * fish.sway * 30;
+        fish.y += Math.cos(fish.direction) * fish.sway * 20;
 
-          // Change the direction slightly to mimic a more realistic motion
-          fish.direction += fish.sway;
+        // Change the direction slightly to mimic a more realistic motion
+        fish.direction += fish.sway;
 
-          // Make the fish "bounce" when hitting the screen edges
-          if (fish.x > window.innerWidth || fish.x < 0) {
-              fish.speedX = -fish.speedX;
-          }
-          if (fish.y > window.innerHeight || fish.y < 0) {
-              fish.speedY = -fish.speedY;
-          }
+        // Make the fish "bounce" when hitting the screen edges
+        if (fish.x > window.innerWidth || fish.x < 0) {
+            fish.speedX = -fish.speedX;
+        }
+        if (fish.y > window.innerHeight || fish.y < 0) {
+            fish.speedY = -fish.speedY;
+        }
 
-          // Fish will move slightly towards the mouse for interaction
-          fish.x += (mouseX - fish.x) * 0.01;
-          fish.y += (mouseY - fish.y) * 0.01;
+        // Fish will move slightly towards the mouse for interaction
+        fish.x += (mouseX - fish.x) * 0.01;
+        fish.y += (mouseY - fish.y) * 0.01;
 
-          // Update the position of the fish on the screen
-          fish.element.setAttribute('cx', fish.x);
-          fish.element.setAttribute('cy', fish.y);
-      });
+        // Update the position of the fish on the screen
+        fish.element.setAttribute('cx', fish.x);
+        fish.element.setAttribute('cy', fish.y);
+    });
 
-      requestAnimationFrame(animateFish);
-  }
+    requestAnimationFrame(animateFish);
+}
 
-  // Start the animation loop
-  animateFish();
+// Start the animation loop
+animateFish();
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
     const items = Array.from(track.children);
     let index = 0;
@@ -798,91 +816,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(moveCarousel, 3000);
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Menu hamburger
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (hamburger && navMenu) {
-        // Gestionnaire d'événement pour le menu hamburger
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            console.log('Menu toggled'); // Pour déboguer
-        });
-
-        // Fermer le menu quand on clique sur un lien
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-
-        // Fermer le menu quand on clique en dehors
-        document.addEventListener('click', (event) => {
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(event.target) && 
-                !hamburger.contains(event.target)) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-        
-        // Empêcher la fermeture du menu lorsqu'on clique à l'intérieur du menu
-        navMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    }
-
-    // Fonction de décompte
-    function updateCountdown() {
-        const targetDate = new Date("March 22, 2025 10:00:00").getTime();
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = days.toString().padStart(2, '0');
-        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-    }
-
-    // Mettre à jour le décompte chaque seconde
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // Carousel automatique
-    const track = document.querySelector('.carousel-track');
-    if (track) {
-        const items = Array.from(track.children);
-        let index = 0;
-
-        function moveCarousel() {
-            index = (index + 1) % items.length;
-            if (window.innerWidth <= 576) {
-                track.style.transform = `translateX(-${index * 100}%)`;
-            } else {
-                const itemWidth = items[0].getBoundingClientRect().width + 20; // 20px pour la marge
-                track.style.transform = `translateX(-${index * itemWidth}px)`;
-            }
-        }
-
-        setInterval(moveCarousel, 3000);
-        
-        // Ajouter un écouteur de redimensionnement pour ajuster le carousel
-        window.addEventListener('resize', () => {
-            index = 0; // Réinitialiser l'index lors du redimensionnement
-            track.style.transform = 'translateX(0)';
-        });
-    }
 });
