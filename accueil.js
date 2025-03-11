@@ -800,24 +800,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(moveCarousel, 3000);
 });
 
-// Menu hamburger
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Menu hamburger
