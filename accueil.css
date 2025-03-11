@@ -393,14 +393,28 @@ h2 {
     transition: var(--transition);
 }
 
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-        order: 3;
-        margin-left: auto;
-        z-index: 1002; /* S'assurer que le hamburger est au-dessus du menu */
-    }
+/* Animation du hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
 
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
     .nav-container {
         padding: 0 1rem;
         display: flex;
