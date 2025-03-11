@@ -802,16 +802,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     // Menu hamburger
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event from bubbling up
+        // Gestionnaire d'événement pour le menu hamburger
+        hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+            console.log('Menu toggled'); // Pour déboguer
         });
 
         // Fermer le menu quand on clique sur un lien
@@ -824,7 +826,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Fermer le menu quand on clique en dehors
         document.addEventListener('click', (event) => {
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(event.target) && 
+                !hamburger.contains(event.target)) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             }
