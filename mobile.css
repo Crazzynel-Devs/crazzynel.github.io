@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #00a8ff;
     --secondary-color: #0097e6;
@@ -409,7 +408,7 @@ h2 {
     .nav-container {
         padding: 0 1rem;
     }
-    
+
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -419,7 +418,7 @@ h2 {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .carousel-item {
         min-width: 250px;
     }
@@ -428,10 +427,19 @@ h2 {
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block;
+        order: 3;
+        margin-left: auto;
     }
 
     .nav-container {
         padding: 0 1rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-left {
+        order: 1;
+        margin-right: auto;
     }
 
     .nav-center {
@@ -444,6 +452,7 @@ h2 {
         padding-top: 80px;
         transition: var(--transition);
         z-index: 1000;
+        order: 2;
     }
 
     .nav-center.active {
@@ -457,8 +466,18 @@ h2 {
         gap: 1.5rem;
     }
 
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
     .nav-links a {
         font-size: 1.2rem;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0.8rem 1.5rem;
     }
 
     .logo img {
@@ -468,64 +487,22 @@ h2 {
     .contact-btn {
         display: none;
     }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .countdown {
-        gap: 1rem;
-    }
-    
-    .countdown-item {
-        min-width: 70px;
-        padding: 0.5rem;
-    }
-    
-    .countdown-item span {
-        font-size: 1.5rem;
-    }
-    
-    .countdown-item .label {
-        font-size: 0.8rem;
-    }
-    
-    .carousel-item {
-        min-width: 200px;
-    }
-
-    section {
-        padding: 2rem 1rem;
-    }
-
-    .logo-container a {
-        flex: 1 0 30%;
-    }
 }
 
 @media screen and (max-width: 576px) {
     .hero h1 {
         font-size: 1.8rem;
     }
-    
+
     .countdown {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .carousel-item {
         min-width: 100%;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -534,7 +511,7 @@ h2 {
     .social-links {
         justify-content: center;
     }
-    
+
     .logo-container a {
         flex: 1 0 45%;
     }

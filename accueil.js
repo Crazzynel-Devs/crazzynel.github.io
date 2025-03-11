@@ -800,21 +800,37 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(moveCarousel, 3000);
 });
 
-// Menu hamburger
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Menu hamburger
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling up
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
-    });
-});
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Fermer le menu quand on clique en dehors
+        document.addEventListener('click', (event) => {
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Empêcher la fermeture du menu lorsqu'on clique à l'intérieur du menu
+        navMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
