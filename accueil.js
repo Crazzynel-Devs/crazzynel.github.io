@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-    });
-
-    // Fermer le menu si on clique en dehors
-    document.addEventListener('click', (event) => {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-            mobileMenu.classList.remove('active');
-            hamburger.classList.remove('open');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
     // Classe pour gérer les jeux mathématiques
     class MathGame {
         constructor(type) {
