@@ -709,21 +709,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function toggleMenu () {  
-        const navbar = document.querySelector('.navbar');
-        const burger = document.querySelector('.burger');
+    document.addEventListener('DOMContentLoaded', () => {
+        // Navigation active state
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-links a');
         
-        burger.addEventListener('click', (e) => {    
-          navbar.classList.toggle('show-nav');
-        });    
-        // bonus
-        const navbarLinks = document.querySelectorAll('.navbar a');
-        navbarLinks.forEach(link => {
-          link.addEventListener('click', (e) => {    
-            navbar.classList.toggle('show-nav');
-          }); 
-        })
-         
-      }
-      toggleMenu();
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'https://prevert-maths.cyborgbulls.fr')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Menu hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (hamburger && navMenu) {
+            // S'assurer que le hamburger est visible sur mobile
+            if (window.innerWidth <= 768) {
+                hamburger.style.display = 'block';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                console.log('Menu toggled'); // Pour le débogage
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+            
+            // Fermer le menu quand on clique en dehors
+            document.addEventListener('click', (event) => {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(event.target) && 
+                    !hamburger.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+            
+            // Empêcher la fermeture du menu lorsqu'on clique à l'intérieur du menu
+            navMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // Ajuster l'affichage du menu lors du redimensionnement de la fenêtre
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.style.display = 'block';
+                } else {
+                    hamburger.style.display = 'none';
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        }
     });
+});
