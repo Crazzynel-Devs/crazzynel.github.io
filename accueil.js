@@ -709,48 +709,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    var sidenav = document.getElementById("mySidenav");
-    var openBtn = document.getElementById("openBtn");
-    var closeBtn = document.getElementById("closeBtn");
-    
-    openBtn.onclick = openNav;
-    closeBtn.onclick = closeNav;
-    
-    /* Set the width of the side navigation to 250px */
-    function openNav() {
-      sidenav.classList.add("active");
-    }
-    
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-      sidenav.classList.remove("active");
-    }
-});
-
-
-    $(document).ready(function () {
-      // Add smooth scrolling to all links
-      $("a").on("click", function (event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            }
-          );
-        } // End if
-      });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélection des éléments
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Vérifier que les éléments existent
+        if (hamburger && navMenu) {
+            // Événement de clic sur le hamburger
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                console.log('Menu toggled');
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+            
+            // Fermer le menu quand on clique en dehors
+            document.addEventListener('click', function(event) {
+                const isClickInside = navMenu.contains(event.target) || hamburger.contains(event.target);
+                if (!isClickInside && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        }
     });
+});
