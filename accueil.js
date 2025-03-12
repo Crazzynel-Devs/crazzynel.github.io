@@ -1,23 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navOverlay = document.getElementById('nav-overlay');
+var sidenav = document.getElementById("mySidenav");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
 
-    // Toggle menu
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-    });
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
 
-    // Close menu when clicking overlay
-    navOverlay.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        navOverlay.classList.remove('active');
-    });
-});
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  sidenav.classList.add("active");
+}
 
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  sidenav.classList.remove("active");
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Classe pour gérer les jeux mathématiques
     class MathGame {

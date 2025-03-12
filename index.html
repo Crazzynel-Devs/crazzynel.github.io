@@ -10,30 +10,23 @@
 </head>
 <body>
     <nav class="nav-menu">
-        <div class="nav-container">
-          <div class="nav-left">
-            <div class="logo">
-              <img src="logos/logo_salon.jpeg" alt="Logo du salon">
-            </div>
-          </div>
-          <div class="nav-center" id="nav-menu">
-            <ul class="nav-links">
-              <li><a href="index.html" class="active">Accueil</a></li>
-              <li><a href="programme.html">Programme</a></li>
-              <li><a href="videos.html">Vidéos</a></li>
-              <li><a href="jeu.html">Jeux</a></li>
+        <div id="mySidenav" class="sidenav">
+            <a id="closeBtn" href="#" class="close">&times;</a>
+            <ul>
+              <li><a href="#">A propos</a></li>
+              <li><a href="#">Nos services</a></li>
+              <li><a href="#">Témoignages</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
-          <div class="nav-right">
-            <a href="#contact" class="contact-btn">Contact</a>
-            <button class="hamburger" id="hamburger">
+          
+          <a href="#" id="openBtn">
+            <span class="burger-icon">
               <span></span>
               <span></span>
               <span></span>
-            </button>
-          </div>
-          <div class="nav-overlay" id="nav-overlay"></div>
-        </div>
+            </span>
+          </a>
       </nav>
     
     <header class="hero">
