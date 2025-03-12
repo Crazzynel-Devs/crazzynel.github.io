@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('href');
-            if (linkPage === currentPage) {
+            if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'https://prevert-maths.cyborgbulls.fr')) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
@@ -728,6 +728,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const navMenu = document.getElementById('nav-menu');
         
         if (hamburger && navMenu) {
+            // S'assurer que le hamburger est visible sur mobile
+            if (window.innerWidth <= 768) {
+                hamburger.style.display = 'block';
+            }
+            
             hamburger.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -757,6 +762,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Empêcher la fermeture du menu lorsqu'on clique à l'intérieur du menu
             navMenu.addEventListener('click', (e) => {
                 e.stopPropagation();
+            });
+            
+            // Ajuster l'affichage du menu lors du redimensionnement de la fenêtre
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.style.display = 'block';
+                } else {
+                    hamburger.style.display = 'none';
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
             });
         }
     });

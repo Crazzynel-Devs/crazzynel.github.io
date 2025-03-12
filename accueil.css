@@ -348,6 +348,9 @@ body {
     border: none;
     padding: 0.5rem;
     z-index: 1002;
+    position: absolute;
+    right: 15px;
+    top: 15px;
 }
 
 .hamburger span {
@@ -375,38 +378,38 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
-        display: block; /* Afficher le hamburger sur mobile */
-        position: absolute;
-        right: 20px;
-        top: 20px;
+        display: block; /* Rendre le hamburger visible sur mobile */
     }
     
     .nav-container {
         padding: 0 1rem;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
     }
 
     .nav-left {
         order: 1;
-        margin-right: auto;
         z-index: 1002; /* S'assurer que le logo est au-dessus du menu */
+    }
+
+    .nav-right {
+        display: none; /* Cacher le bouton contact sur mobile */
     }
 
     .nav-center {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 250px; /* Menu moins large */
         height: 100vh;
         background: var(--background-dark);
-        padding-top: 80px;
+        padding-top: 70px;
         transition: var(--transition);
-        z-index: 1000;
-        order: 2;
+        z-index: 1001;
         box-shadow: none;
-        overflow-y: auto; /* Permettre le défilement si nécessaire */
+        overflow-y: auto;
     }
 
     .nav-center.active {
@@ -415,9 +418,11 @@ body {
     }
 
     .nav-links {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        padding: 0;
     }
 
     .nav-links li {
@@ -427,19 +432,15 @@ body {
     }
 
     .nav-links a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         display: block;
         width: 80%;
         margin: 0 auto;
-        padding: 0.8rem 1.5rem;
+        padding: 0.7rem 1rem;
         border-radius: 8px;
     }
 
     .logo img {
-        height: 40px;
-    }
-
-    .contact-btn {
-        display: none;
+        height: 35px;
     }
 }
