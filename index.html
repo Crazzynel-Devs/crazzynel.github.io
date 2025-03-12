@@ -9,26 +9,22 @@
     <script src="countdown.js" defer></script>
 </head>
 <body>
-    <nav class="nav-menu">
-        <div class="nav-container">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            
-            <div class="mobile-menu" id="mobile-menu">
-                <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="programme.html">Programme</a></li>
-                    <li><a href="videos.html">Vidéos</a></li>
-                    <li><a href="jeu.html">Jeux</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>            
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo_salon.jpeg" alt="Logo du salon">
         </div>
-      </nav>
-    
+        <div class="nav-links>
+            <ul>
+                <li class="active"><a href="https://prevert-maths.cyborgbulls.fr">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="videos.html">Vidéos</a></li>
+                <li><a href="jeu.html">Jeux</a></li>
+                <li><a href="Accueil.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        <img src="menu.png" alt="menu-hamburger" class="menu-hamburger">
+    </nav>
+
     <header class="hero">
         <div class="hero-overlay"></div>
         <img src="logos/copie_affiche.jpg" alt="Affiche du salon" class="hero-image">
@@ -195,4 +191,12 @@
     </footer>
     </main>
 </body>
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburger")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('menu mobile')
+    })
+</script>
 </html>
