@@ -4,7 +4,6 @@
     --background-dark: #192a56;
     --text-light: #f5f6fa;
     --glow-color: #74b9ff;
-    --transition: all 0.3s ease;
     --primary-color-rgb: 0, 168, 255;
     --accent-color: #ff69b4;
 }
@@ -38,7 +37,7 @@
 .navbar  .nav-links ul li {
     margin:0 25px;
 }
-.navbar  .nav-links ul li.active a {
+.navbar  .nav-links ul li.active {
     color: cornflowerblue;
     font-weight: 600;
 }
