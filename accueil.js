@@ -710,36 +710,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Sélection des éléments
+        // Sélection des éléments du menu
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
-        
-        // Vérifier que les éléments existent
-        if (hamburger && navMenu) {
-            // Événement de clic sur le hamburger
-            hamburger.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-                console.log('Menu toggled');
-            });
-            
-            // Fermer le menu quand on clique sur un lien
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
-            });
-            
-            // Fermer le menu quand on clique en dehors
-            document.addEventListener('click', function(event) {
-                const isClickInside = navMenu.contains(event.target) || hamburger.contains(event.target);
-                if (!isClickInside && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            });
+        const navOverlay = document.getElementById('nav-overlay');
+      
+        // Fonction pour basculer l'affichage du menu
+        function toggleMenu() {
+          navMenu.classList.toggle('active');
+          hamburger.classList.toggle('active');
+          navOverlay.classList.toggle('active');
+          document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+          
+          // Force le recalcul du style pour s'assurer que la transition fonctionne
+          if (navMenu.classList.contains('active')) {
+            navMenu.style.right = '0';
+          } else {
+            navMenu.style.right = '-300px';
+          }
+          
+          console.log('Menu toggled'); // Pour le débogage
         }
-    });
-});
+      
+        // Ajout d'événements sur le hamburger
+        if (hamburger) {
+          hamburger.addEventListener('click', toggleMenu);
+          console.log('Hamburger event listener added');
+        } else {
+          console.error('Hamburger button not found');
+        }
+      
+        // Ajout d'événements sur l'overlay
+        if (navOverlay) {
+          navOverlay.addEventListener('click', toggleMenu);
+        } else {
+          console.error('Nav overlay not found');
+        }
+      
+        // Fermer le menu quand on clique sur un lien
+        const navLinks = document.querySelectorAll('.nav-links a');
+        if (navLinks.length > 0) {
+          navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              navMenu.classList.remove('active');
+              hamburger.classList.remove('active');
+              navOverlay.classList.remove('active');
+            });
+          });
+        } else {
+          console.error('Nav links not found');
+        }
+      });
+ });      
