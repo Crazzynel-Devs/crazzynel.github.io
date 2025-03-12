@@ -9,18 +9,7 @@
     --accent-color: #ff69b4;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background-dark);
-    color: var(--text-light);
-    line-height: 1.6;
-}
 .navbar {
     position:absolute;
     padding: 50px;
