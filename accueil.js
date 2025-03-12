@@ -1,19 +1,21 @@
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        hamburger.classList.toggle('open');
+    });
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  sidenav.classList.add("active");
-}
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (event) => {
+        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('open');
+        }
+    });
+});
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  sidenav.classList.remove("active");
-}
 document.addEventListener('DOMContentLoaded', () => {
     // Classe pour gérer les jeux mathématiques
     class MathGame {
