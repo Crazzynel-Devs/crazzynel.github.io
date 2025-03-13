@@ -1,3 +1,11 @@
+function toggleMenu() {
+    var navLinks = document.getElementById("navLinks");
+    if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "flex";
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Classe pour gérer les jeux mathématiques
     class MathGame {

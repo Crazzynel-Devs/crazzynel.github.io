@@ -24,42 +24,27 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <img src="logos/copie_affiche.jpg" alt="Affiche du salon" class="hero-image">
-        <div class="hero-content">
-            <h1>Salon des Jeux Mathématiques 2025</h1>
-            <p>22 Mars 2025 de 10h à 18h</p>
-            <div id="countdown" class="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    <span class="label">Jours</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">00</span>
-                    <span class="label">Heures</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">00</span>
-                    <span class="label">Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">00</span>
-                    <span class="label">Secondes</span>
-                </div>
-            </div>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo_salon.jpeg" alt="Logo du salon">
         </div>
-    </header>
-
-    <main>
-        <section>
-          <h2>Découvrez notre événement qui aura lieu le 22 Mars 2025.</h2>
-          <div class="buttons">
-            <a href="programme.html" class="btn">Voir le programme</a>
-            <a href="videos.html" class="btn">Regarder nos vidéos</a>
-          </div>
-        </section>
-      </main>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li class="active"><a href="https://prevert-maths.cyborgbulls.fr">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="videos.html">Vidéos</a></li>
+                <li><a href="jeu.html">Jeux</a></li>
+                <li><a href="Accueil.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
  
       <section id="partners" class="carousel">
         <h1 class="title">Ils seront présents au Salon des Mathématiques</h1>
@@ -190,12 +175,4 @@
     </footer>
     </main>
 </body>
-<script>
-    const menuHamburger = document.querySelector(".menu-hamburger")
-    const navLinks = document.querySelector(".nav-links")
-
-    menuHamburger.addEventListener('click',()=>{
-    navLinks.classList.toggle('menu mobile')
-    })
-</script>
 </html>
