@@ -1,14 +1,3 @@
-:root {
-    --primary-color: #00a8ff;
-    --secondary-color: #0097e6;
-    --background-dark: #192a56;
-    --text-light: #f5f6fa;
-    --glow-color: #74b9ff;
-    --primary-color-rgb: 0, 168, 255;
-    --accent-color: #ff69b4;
-}
-
-
 * {
     margin: 0;
     padding: 0;
