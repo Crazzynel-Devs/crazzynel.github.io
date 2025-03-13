@@ -347,26 +347,6 @@ h2 {
     font-size: 0.9rem;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 25px;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background: var(--primary-color);
-    box-shadow: 0 0 15px var(--glow-color);
-}
 
 .footer-bottom {
     text-align: center;
