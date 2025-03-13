@@ -627,14 +627,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 fragment.style.transform = baseTransform + ` rotateX(${-angleX}deg) rotateY(${angleY}deg)`;
             }
 
-            // Effet de brillance
-            const glare = fragment.querySelector('.screen-glare');
-            const fragmentRect = fragment.getBoundingClientRect();
-            const glareX = ((mouseX - fragmentRect.left) / fragmentRect.width) * 100;
-            const glareY = ((mouseY - fragmentRect.top) / fragmentRect.height) * 100;
-            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.3) 0%, transparent 60%)`;
-        });
-    }
 
     // Initialisation
     createParticles();
