@@ -1,12 +1,3 @@
-/* Variables */
-:root {
-    --menu-bg: #333;
-    --menu-transition: 0.3s ease;
-    --primary-color: #00a8ff;
-    --secondary-color: #0097e6;
-    --text-light: #f5f6fa;
-}
-
 /* Reset et styles de base */
 * {
     margin: 0;
@@ -24,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: var(--menu-bg);
-    padding: 15px 5%;
+    padding: 10px 5%;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,8 +23,15 @@ body {
     z-index: 1000;
 }
 
-.lolo img {
-    height: 50px;
+.logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -46,13 +44,17 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: color var(--menu-transition);
+    display: block;
+    padding: 5px 0;
 }
 
 .nav-links ul li a:hover {
@@ -66,7 +68,6 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px;
-    position: relative;
     z-index: 1001;
 }
 
@@ -74,12 +75,20 @@ body {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 4px 0;
-    transition: all var(--menu-transition);
+    margin: 5px 0;
+    transition: var(--menu-transition);
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
     .hamburger {
         display: block;
     }
@@ -92,7 +101,7 @@ body {
         height: 100vh;
         width: 100%;
         background: rgba(51, 51, 51, 0.95);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(5px);
     }
 
     .nav-links.active {
@@ -105,16 +114,23 @@ body {
     .nav-links ul {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        width: 100%;
     }
 
     .nav-links ul li {
         text-align: center;
+        width: 100%;
+    }
+
+    .nav-links ul li a {
+        font-size: 18px;
+        padding: 10px;
     }
 
     /* Animation du hamburger */
     .hamburger.active div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.active div:nth-child(2) {
@@ -122,11 +138,7 @@ body {
     }
 
     .hamburger.active div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    body.menu-open {
-        overflow: hidden;
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
