@@ -26,7 +26,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 document.addEventListener('click', (e) => {
     const isClickInsideNav = navLinks.contains(e.target);
     const isClickOnHamburger = hamburger.contains(e.target);
-    
+
     if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
         toggleMenu();
     }
