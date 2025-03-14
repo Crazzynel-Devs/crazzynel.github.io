@@ -5,52 +5,34 @@ const body = document.body;
 
 // Toggle menu function
 function toggleMenu() {
-    hamburger.classList.toggle('active');
+    console.log('Toggle menu clicked'); // Debug log
     navLinks.classList.toggle('active');
-    body.classList.toggle('menu-open');
+    hamburger.classList.toggle('active');
+
+    // Update ARIA attributes
+    const isExpanded = navLinks.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
 }
 
-// Event Listeners
-hamburger.addEventListener('click', toggleMenu);
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        body.classList.remove('menu-open');
-    });
+// Add click event to hamburger
+hamburger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
 });
 
 // Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    const isClickInsideNav = navLinks.contains(e.target);
-    const isClickOnHamburger = hamburger.contains(e.target);
-
-    if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
+document.addEventListener('click', function(e) {
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !hamburger.contains(e.target)) {
         toggleMenu();
     }
 });
 
-// Handle window resize
-window.addEventListener('resize', () => {
+// Close menu when window is resized
+window.addEventListener('resize', function() {
     if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
         toggleMenu();
     }
-});
-
-// Prevent scroll when menu is open
-function preventScroll(e) {
-    if (body.classList.contains('menu-open')) {
-        e.preventDefault();
-    }
-}
-
-// Touch event listeners for mobile
-document.addEventListener('touchmove', preventScroll, { passive: false });
-
-// Clean up function to remove event listeners (good practice)
-window.addEventListener('unload', () => {
-    hamburger.removeEventListener('click', toggleMenu);
-    document.removeEventListener('touchmove', preventScroll);
 });
