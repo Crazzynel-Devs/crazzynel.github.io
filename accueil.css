@@ -68,19 +68,8 @@ body {
 }
 
 .nav-links {
-    display: none; /* Masque le menu par défaut */
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    background-color: #fff;
-    position: absolute;
-    top: 60px; /* Ajustez selon la hauteur de votre navbar */
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.nav-links.active {
-    display: flex; /* Affiche le menu lorsqu'il est actif */
 }
 
 .nav-links ul {
@@ -106,16 +95,17 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-    display: none; /* Masque l'icône par défaut */
+    display: none;
     cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
+    z-index: 1001;
 }
 
 .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: #000;
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: var(--transition);
 }
 
 /* Mobile Styles */
@@ -163,13 +153,9 @@ body {
     }
 
     .hamburger {
-        display: flex; /* Affiche l'icône sur les petits écrans */
+        display: block;
         position: relative;
         z-index: 1001;
-    }
-
-    .nav-links {
-        display: none; /* Masque le menu par défaut sur mobile */
     }
 
     /* Animation du hamburger en croix */
