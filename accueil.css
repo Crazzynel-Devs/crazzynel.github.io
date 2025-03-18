@@ -668,3 +668,105 @@ section h2 {
         height: 150px;
     }
 }
+
+/* Section Créateurs */
+.creators-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, 
+        rgba(30, 59, 140, 0.9) 0%, 
+        rgba(10, 26, 59, 0.9) 100%);
+    margin: 2rem 0;
+}
+
+.creators-section h2 {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px var(--text-glow);
+}
+
+.project-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.project-description p:first-child {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px var(--text-glow);
+}
+
+.creators-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.creator-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+}
+
+.creator-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+}
+
+.creator-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.creator-card h3 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.creator-card p {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .creators-section {
+        padding: 2rem 1rem;
+    }
+
+    .creators-section h2 {
+        font-size: 2rem;
+    }
+
+    .project-description p {
+        font-size: 1.1rem;
+    }
+
+    .project-description p:first-child {
+        font-size: 1.2rem;
+    }
+
+    .creator-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
