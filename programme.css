@@ -1,4 +1,3 @@
-
 /* Program Section */
 .program-section {
     padding: 60px 20px;
@@ -151,5 +150,38 @@
     
     .program-image {
         max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .program-container {
+        padding: 10px;
+    }
+
+    .program-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .glow-lines {
+        display: none;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .carousel-container {
+        gap: 0.5rem;
+    }
+
+    .carousel-item {
+        flex: 0 0 150px;
+        padding: 0.5rem;
+    }
+
+    .carousel-item img {
+        max-width: 80px;
+        max-height: 80px;
     }
 }

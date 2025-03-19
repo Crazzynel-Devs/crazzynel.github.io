@@ -24,6 +24,14 @@ function toggleMenu() {
 
 hamburger.addEventListener('click', toggleMenu);
 
+navItems.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
 // Fermer le menu quand on clique sur un lien
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', toggleMenu);
