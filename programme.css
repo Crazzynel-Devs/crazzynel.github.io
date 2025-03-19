@@ -1,18 +1,4 @@
 
-.page-header {
-    padding-top: 100px;
-    text-align: center;
-    background: linear-gradient(135deg, #192a56, #273c75);
-    padding-bottom: 2rem;
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    text-shadow: 0 0 10px var(--glow-color);
-    margin-bottom: 1rem;
-}
-
 /* Program Section */
 .program-section {
     padding: 60px 20px;
