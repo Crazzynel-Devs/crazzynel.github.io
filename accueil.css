@@ -883,7 +883,7 @@ section h2 {
     }
 
     .wazar-container img {
-        max-width: 300px;
+        max-width: 150px; /* Taille réduite de l'image */
     }
 
     .wazar-info h2 {
