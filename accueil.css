@@ -27,6 +27,11 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Navigation */
@@ -191,8 +196,9 @@ body {
     height: 100vh;
     min-height: 600px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     overflow: hidden;
     margin-top: 70px;
@@ -291,6 +297,7 @@ body {
 
 .carousel-container {
     display: flex;
+    justify-content: center;
     overflow-x: hidden; /* Changé de auto à hidden pour l'animation automatique */
     padding: 10px;
     scrollbar-width: thin;
@@ -382,6 +389,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+    justify-content: center;
+    text-align: center;
 }
 
 .footer-section h3 {
@@ -413,6 +422,11 @@ body {
     border-radius: 10px;
     margin: 20px auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Boutons et liens sociaux */
@@ -509,6 +523,10 @@ section {
     margin: 3rem auto;
     padding: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section h2 {
@@ -547,6 +565,7 @@ section h2 {
     padding: 1rem;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    justify-content: center;
 }
 
 .carousel-item {
@@ -711,6 +730,7 @@ section h2 {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .creator-card {
@@ -833,6 +853,8 @@ section h2 {
     border-radius: 20px;
     border: 1px solid var(--primary-color);
     box-shadow: 0 0 30px rgba(0, 168, 255, 0.2);
+    justify-content: center;
+    text-align: center;
 }
 
 .wazar-container img {
