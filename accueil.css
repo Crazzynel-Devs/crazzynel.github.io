@@ -985,3 +985,186 @@ section h2 {
         text-align: center;
     }
 }
+/* Media Queries Globales */
+/* Grand écran */
+@media screen and (min-width: 1400px) {
+    .container, 
+    .creators-container,
+    .wazar-container,
+    .carousel-container {
+        max-width: 1320px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .countdown-item {
+        font-size: 3rem;
+    }
+}
+
+/* Écran moyen */
+@media screen and (max-width: 1200px) {
+    .container,
+    .creators-container,
+    .wazar-container,
+    .carousel-container {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .countdown-item {
+        font-size: 2.5rem;
+    }
+
+    .creator-card {
+        width: calc(33.333% - 2rem);
+    }
+
+    .carousel-item {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+/* Tablette */
+@media screen and (max-width: 992px) {
+    .container,
+    .creators-container,
+    .wazar-container,
+    .carousel-container {
+        max-width: 720px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown-item {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .creator-card {
+        width: calc(50% - 2rem);
+    }
+
+    .carousel-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    .wazar-container {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .logo-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile large */
+@media screen and (max-width: 768px) {
+    .container,
+    .creators-container,
+    .wazar-container,
+    .carousel-container {
+        max-width: 540px;
+        padding: 0 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+        min-width: 120px;
+    }
+
+    .creator-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .logo-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Mobile petit */
+@media screen and (max-width: 576px) {
+    .container,
+    .creators-container,
+    .wazar-container,
+    .carousel-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .countdown-item {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        min-width: 100px;
+    }
+
+    .logo-container {
+        grid-template-columns: 1fr;
+    }
+
+    .wazar-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-section {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media screen and (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .countdown-item {
+        font-size: 1rem;
+        padding: 0.5rem;
+        min-width: 80px;
+    }
+
+    .wazar-info h2 {
+        font-size: 1.5rem;
+    }
+}
