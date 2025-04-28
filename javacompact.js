@@ -799,3 +799,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(moveCarousel, 3000);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuration de la galerie
+    const itemsPerPage = 12;
+    const totalItems = 37; // Nombre total d'images
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    
+    // Éléments DOM
+    const galleryContainer = document.getElementById('gallery');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const currentPageEl = document.getElementById('current-page');
+    const totalPagesEl = document.getElementById('total-pages');
+    
+    // Initialisation de l'état de la galerie
+    let currentPage = 1;
+    totalPagesEl.textContent = totalPages;
+
+    // Génération des données d'images
+    function generateImageData() {
+        const images = [];
+        for (let i = 1; i <= totalItems; i++) {
+            // Nous n'avons que 2 images, donc nous alternerons entre elles
+            const imgNum = ((i - 1) % 2) + 1;
+            
+            images.push({
+                id: i,
+                url: `images/PSL${imgNum}.jpg`,
+                alt: `PSL Image ${i}`
+            });
+        }
+        return images;
+    }
+
+    // Fonction pour créer un élément d'image
+    function createGalleryItem(image) {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.dataset.id = image.id;
+        
+        galleryItem.innerHTML = `
+            <div class="gallery-card">
+                <img 
+                    src="${image.url}" 
+                    alt="${image.alt}" 
+                    loading="lazy"
+                    class="gallery-image">
+                <div class="gallery-overlay">
+                    <span class="image-number">${image.id}</span>
+                </div>
+            </div>
+        `;
+        
+        return galleryItem;
+    }
+    
+    // Afficher une page spécifique d'images
+    function showPage(pageNumber) {
+        // Mise à jour des éléments UI
+        currentPageEl.textContent = pageNumber;
+        prevBtn.disabled = pageNumber === 1;
+        nextBtn.disabled = pageNumber === totalPages;
+        
+        // Vider la galerie
+        galleryContainer.innerHTML = '';
+        
+        // Calculer quelles images afficher
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+        const images = generateImageData();
+        
+        // Ajouter les images pour la page courante avec animation décalée
+        for (let i = startIndex; i < endIndex; i++) {
+            if (images[i]) {
+                const delay = (i - startIndex) * 0.05; // Délai décalé pour une belle animation
+                const galleryItem = createGalleryItem(images[i]);
+                galleryItem.style.animationDelay = `${delay}s`;
+                galleryContainer.appendChild(galleryItem);
+            }
+        }
+        
+        // Défilement doux vers le haut de la galerie lors du changement de page
+        window.scrollTo({
+            top: document.querySelector('.gallery-container').offsetTop,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Initialiser avec la première page
+    showPage(currentPage);
+    
+    // Écouteurs d'événements pour les boutons de pagination
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    });
+    
+    // Fonctionnalité modale pour la visualisation des images (amélioration optionnelle)
+    document.addEventListener('click', function(e) {
+        const galleryItem = e.target.closest('.gallery-item');
+        if (galleryItem) {
+            const imgSrc = galleryItem.querySelector('img').src;
+            const imgAlt = galleryItem.querySelector('img').alt;
+            const imgId = galleryItem.dataset.id;
+            
+            // Pour l'instant on log, on pourrait implémenter une visionneuse modale
+            console.log(`Image ${imgId} cliquée: ${imgSrc} (${imgAlt})`);
+        }
+    });
+});
