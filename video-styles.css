@@ -199,3 +199,26 @@ main {
 .load-more-btn.hidden {
    display: none;
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.load-more-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  font-size: 1.1em;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

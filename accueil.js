@@ -107,3 +107,35 @@ function setActiveMenuItem() {
 }
 
 window.addEventListener('scroll', setActiveMenuItem);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const TOTAL_IMAGES = 35;
+    const IMAGES_PER_LOAD = 12;
+    let currentItems = 0;
+
+    const gallery = document.getElementById('gallery');
+    const loadMoreBtn = document.getElementById('loadMore');
+
+    function loadItems() {
+        const fragment = document.createDocumentFragment();
+        const end = Math.min(currentItems + IMAGES_PER_LOAD, TOTAL_IMAGES);
+
+        for (let i = currentItems; i < end; i++) {
+            const img = document.createElement('img');
+            img.src = `PSL/PSL${i+1}.jpg`;
+            img.alt = `Image PSL ${i+1}`;
+            img.className = 'gallery-img';
+            fragment.appendChild(img);
+        }
+
+        gallery.appendChild(fragment);
+        currentItems += IMAGES_PER_LOAD;
+
+        if (currentItems >= TOTAL_IMAGES) {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    loadMoreBtn.addEventListener('click', loadItems);
+    loadItems(); // Charger les premiers éléments
+});
