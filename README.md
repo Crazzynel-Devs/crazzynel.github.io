@@ -30,6 +30,7 @@ L’objectif est de faire découvrir les mathématiques autrement, à travers de
 ├── js/                 # Scripts JavaScript
 ├── images/             # Illustrations, logos, photos
 ├── favicon.ico
+├── ... more
 └── LICENSE
 ```
 
@@ -86,7 +87,7 @@ Tu peux consulter le texte complet dans le fichier [`LICENSE`](./LICENSE).
 ## 🙌 Crédits
 
 Projet réalisé par les élèves :
-- **Chambreu Mathis**
+- **Chambeu Mathis**
 - **Eli Jardin**
 - **Zakaria Bekkar**
 - **Yildiz Berat**
