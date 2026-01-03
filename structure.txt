@@ -1,0 +1,117 @@
+.
+./ImagesPI
+./ImagesPI/fond_pi.jpg
+./ImagesPI/logo-salon01.jpg
+./ImagesPI/logo-salon02.png
+./ImagesPI/logo_salon01.jpeg
+./ImagesPI/numeros.jpg
+./accueil.css
+./index.html
+./games.js
+./pi_acceuil.html
+./jeudemémoire.html
+./créateur
+./créateur/antoine.jpg
+./créateur/eli.jpeg
+./créateur/mathis.jpeg
+./créateur/zakaria.jpeg
+./créateur/berat.jpeg
+./LICENSE
+./mem.css
+./sudoku.css
+./jeu.html
+./PSL
+./PSL/PSL5.jpg
+./PSL/PSL27.jpg
+./PSL/PSL33.jpg
+./PSL/PSL32.jpg
+./PSL/PSL4.jpg
+./PSL/PSL26.jpg
+./PSL/PSL18.jpg
+./PSL/PSL30.jpg
+./PSL/PSL24.jpg
+./PSL/PSL6.jpg
+./PSL/PSL25.jpg
+./PSL/PSL7.jpg
+./PSL/PSL31.jpg
+./PSL/PSL19.jpg
+./PSL/PSL35.jpg
+./PSL/PSL3.jpg
+./PSL/PSL21.jpg
+./PSL/PSL2.jpg
+./PSL/PSL20.jpg
+./PSL/PSL34.jpg
+./PSL/PSL22.jpg
+./PSL/PSL23.jpg
+./PSL/PSL1.jpg
+./PSL/PSL12.jpg
+./PSL/PSL13.jpg
+./PSL/PSL11.jpg
+./PSL/PSL10.jpg
+./PSL/PSL14.jpg
+./PSL/PSL28.jpg
+./PSL/PSL29.jpg
+./PSL/PSL15.jpg
+./PSL/PSL17.jpg
+./PSL/PSL9.jpg
+./PSL/PSL8.jpg
+./PSL/PSL16.jpg
+./géométrie.html
+./logo_salon.jpeg
+./vidéos
+./vidéos/v2.mp4
+./vidéos/v1.mp4
+./vidéos/nos_video_fond.mp4
+./logos
+./logos/logoN_B2transparent.svg
+./logos/Programme_salon2025.png
+./logos/la_reine.png
+./logos/st_christol.jpg
+./logos/logo académie montpeliet.svg
+./logos/eurek_ales.png
+./logos/mdl.jpg
+./logos/jeu en colabe
+./logos/jeu en colabe/casa.png
+./logos/jeu en colabe/theatre.webp
+./logos/jeu en colabe/echec.jpg
+./logos/jeu en colabe/lezan.jpg
+./logos/bridge.jpg
+./logos/europe.jpg
+./logos/logo_salon.jpeg
+./logos/logo jaque prévert.png
+./logos/occitanie.png
+./logos/bangarang.png
+./logos/imt_mine.png
+./logos/mathssalon.png
+./logos/saint christole.png
+./logos/top_office.png
+./logos/cinéplanet.png
+./logos/Wazar_salon2025.jpeg
+./logos/copie_affiche.jpg
+./logos/banque.jpg
+./logos/MDL_LOGO.png
+./logos/ales bd.avif
+./logos/programme.PNG
+./logos/le gard.jpg
+./video-styles.css
+./accueil.js
+./sudoku.html
+./suitelogique.html
+./README.md
+./sudoku.js
+./galerie.html
+./menu.png
+./style_pi.css
+./programme.css
+./countdown.js
+./jeu.js
+./fermat.png
+./programme.html
+./javacompact.js
+./mem.js
+./structure.txt
+./jeu.css
+./cvl.jpeg
+./1pi_univers.js
+./calculmental.html
+./lesjeux.css
