@@ -1,181 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>	Pi, nombre univers</title>
-	<link rel="stylesheet"  href="style_pi.css">
-	<link rel="stylesheet"  href="accueil.css">
-	<link rel="stylesheet" href="accueil.css">
-    <script src="accueil.js" defer></script>
-	<script src="1pi_univers.js"></script>
-	<meta name="author" content="Salon des Jeux Mathématiques">
-	<meta property="og:image" content="logos/logo_salon.jpeg">
-	<meta property="og:logo" content="logos/logo_salon.jpeg">
-	<meta name="twitter:image" content="logos/logo_salon.jpeg">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="description" content="Retrouvez votre anniversaire dans la célèbre constante Pi et découvrez de façon ludique la place des nombres dans cette suite infinie." />
-	<meta name="keywords" content="Pi, anniversaire dans Pi, mathématiques, découverte" />
-	<meta property="og:title" content="Pi | Salon des Jeux Mathématiques" />
-	<meta property="og:description" content="Saviez-vous que votre anniversaire est dans Pi? Découvrez-le de manière interactive et ludique!" />
-	<link rel="icon" href="/logos/logo_salon.jpeg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Univers de Pi - Salon des Jeux Mathématiques 2025</title>
+    
+    <meta name="description" content="Retrouvez votre date de naissance cachée dans les décimales infinies de Pi !">
+    
+    <link rel="icon" href="../assets/img/logo_salon.jpeg" type="image/jpeg">
 
-</head> 
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/pi.css">
 
+    <script src="../assets/js/accueil.js" defer></script>
+    <script src="../assets/js/pi.js" defer></script>
+</head>
 <body>
-    <nav class="nav-menu">
-        <div class="nav-container">
-            <div class="nav-left">
-                <div class="logo">
-                    <img src="logos/logo_salon.jpeg" alt="Logo du salon">
-                </div>
-            </div>
-			<button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-center" id="nav-menu">
-                <ul class="nav-links">
-                    <li><a href="https://prevert-maths.cyborgbulls.fr">Accueil</a></li>
-                    <li><a href="programme.html">Programme</a></li>
-                    <li><a href="galerie.html">Galerie</a></li>
-                    <li><a href="jeu.html">Jeux</a></li>
-                </ul>
-            </div>
-            <div class="nav-right">
-                <a href="#contact" class="contact-btn">Contact</a>
-            </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../">
+                <img src="../assets/img/logo_salon.jpeg" alt="Logo Salon">
+            </a>
+        </div>
+        <div class="hamburger" aria-label="Menu" role="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="../">Accueil</a></li>
+                <li><a href="../programme/">Programme</a></li>
+                <li><a href="../galerie/">Galerie</a></li>
+                <li class="active"><a href="../jeux/">Jeux</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
+
+    <main class="game-page-content">
+        <div class="content-wrapper">
+            
+            <section class="game-container-wrapper">
+                <div class="game-header">
+                    <h1>L'Univers de Pi (π)</h1>
+                    <p>Pi est un "nombre univers" : ses décimales sont infinies et contiennent toutes les combinaisons possibles de chiffres. Votre date de naissance y est forcément !</p>
+                </div>
+
+                <div class="pi-interface">
+                    
+                    <div class="input-section">
+                        <label for="birthdate">Entrez votre date de naissance (JJ/MM) :</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="birthdate" placeholder="JJ/MM" maxlength="5" autocomplete="off">
+                            <button id="search-btn">Rechercher</button>
+                        </div>
+                    </div>
+
+                    <div id="result-area" class="hidden">
+                        <p class="result-title">Votre date se trouve à la <span id="position">...</span>ème décimale !</p>
+                        <div class="pi-visualizer">
+                            <span id="pi-prefix">...</span>
+                            <span id="pi-found" class="highlight"></span>
+                            <span id="pi-suffix">...</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="credits-pi">
+                <h3>Conçu par :</h3>
+                <p>Legrand Shanice, Clairsin Roxane, Lao Jessica, Bréard Vomero Matthis</p>
+            </section>
+
+            <section id="creators" class="creators-section">
+                <h2>L'Équipe NSI</h2>
+                <div class="project-description">
+                    <p>Projet Terminale 2024-2025 • Lycée Jacques Prévert</p>
+                    <p>Sous la direction de M. Martinez</p>
+                </div>
+                <div class="creators-container">
+                    <div class="creator-card"><img src="../assets/créateur/mathis.jpeg" alt="Mathis"><h3>Mathis Chambeu</h3></div>
+                    <div class="creator-card"><img src="../assets/créateur/eli.jpeg" alt="Eli"><h3>Eli Jardin</h3></div>
+                    <div class="creator-card"><img src="../assets/créateur/zakaria.jpeg" alt="Zakaria"><h3>Zakaria Bekkar</h3></div>
+                    <div class="creator-card"><img src="../assets/créateur/berat.jpeg" alt="Berat"><h3>Berat Yildiz</h3></div>
+                    <div class="creator-card"><img src="../assets/créateur/antoine.jpg" alt="Antoine"><h3>Antoine Fabre-C.</h3></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer-bottom">
+            <h2>Partenaires</h2>
+        </div>
+        <div class="logo-container">
+            <a href="https://www.laregion.fr/" target="_blank"><img src="../assets/logos/occitanie.png" alt="Occitanie"></a>
+            <a href="https://www.gard.fr/" target="_blank"><img src="../assets/logos/le_gard.jpg" alt="Gard"></a>
+            <a href="https://www.saintchristollezales.fr/" target="_blank"><img src="../assets/logos/st_christol.jpg" alt="Saint-Christol"></a>
+            <a href="https://www.ac-montpellier.fr/" target="_blank"><img src="../assets/logos/logo_academie_montpellier.svg" alt="Académie"></a>
+            <a href="https://www.imt-mines-ales.fr/" target="_blank"><img src="../assets/logos/imt_mine.png" alt="IMT Mines"></a>
+            <a href="https://www.eurekales.fr/" target="_blank"><img src="../assets/logos/eurek_ales.png" alt="Eurék'Alès"></a>
+            <a href="https://cineplanet.fr/" target="_blank"><img src="../assets/logos/cineplanet.png" alt="cineplanet"></a>
+            <a href="https://www.top-office.com/" target="_blank"><img src="../assets/logos/top_office.png" alt="Top Office"></a>
+            <a href="https://www.radio-bangarang.fr/" target="_blank"><img src="../assets/logos/bangarang.png" alt="Bangarang"></a>
+            <a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank"><img src="../assets/logos/logo jaque prévert.png" alt="Prévert"></a>
+            <a href="#" target="_blank"><img src="../assets/img/cvl.jpeg" alt="CVL"></a>
+            <a href="https://museefermat.com/" target="_blank"><img src="../assets/img/fermat.png" alt="Fermat"></a>
+            <a href="https://www.europe-en-occitanie.eu/" target="_blank"><img src="../assets/logos/europe.jpg" alt="Europe"></a>
+            <a href="#" target="_blank"><img src="../assets/logos/MDL_LOGO.png" alt="MDL"></a> 
+            <a href="https://lesmathsenscene.fr/" target="_blank"><img src="../assets/logos/mathssalon.png" alt="Maths en Scène"></a> 
+            <a href="https://www.banquepopulaire.fr/sud/" target="_blank"><img src="../assets/logos/banque.jpg" alt="Banque Populaire"></a> 
+            <a href="https://www.canalbd.net/ales-bd/" target="_blank"><img src="../assets/logos/ales-bd.avif" alt="Alès BD"></a>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 ce.0301778v@ac-montpellier.fr</p>
+            </div>
+            <div class="footer-section">
+                <h3>Localisation</h3>
+                <p>📍 Lycée Jacques Prévert</p>
+            </div>
+        </div>
+    </footer>
 </body>
-
-
-		<header>
-			<a id="haut"></a>
-			<br/>
-			<h1 class="titre" >Trouve ta date de naissance dans la suite des décimales de Pi ! </h1>
-			<br/>
-		</header>
-		
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-
-		<section class="section">
-			<p> Qu'est ce qu'un nombre univers ? </p>
-			<p> Un nombre univers est un nombre qui contient n'importe quelle succession de chiffres de longueur finie dans sa partie décimale, par exemple pi est un nombre univers ! </p>
-			<p>Ainsi, il est possible de retrouver ta date de naissance (donnée sous la forme jjmm) dans les décimales de pi ! </p>
-		</section>
-		
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		
-		<h2 class="titre"> Entre ta date de naissance de la forme jj/mm : </h2>
-		<h2> <button style="background:linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) ;border-color:navy ;color:black ;width:200px ;height:40px ;"onClick="pi_decimal()"><font size="5"> .. / .. </font></button> </h2>
-		<h2 class="resultat" id="resultat">Ta date de naissance se trouve à la ..... décimal</h2>
-		
-		<br/>
-		<br/>		
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-
-
-		<footer>
-		<br/>
-		<p class="diff" ><font style="color:white;font-variant: small-caps;">Legrand Shanice, Clairsin Roxane, </font></p>	
-		<p class="diff" ><font style="color:white;font-variant: small-caps;">Lao Jessica, Bréard Vomero Matthis </font></p>
-		<br/>
-		</footer>
-		<footer id="contact" class="footer">
-			<div class="footer-bottom">
-				<h2>LES PARTENAIRES</h2>
-			</div>
-			<div class="logo-container">
-				<a href="https://cyborgbulls.fr" target="_blank">
-					<img src="./logos/logoN_B2transparent.svg" alt="CyborgBulls - ROBOTIQUE">
-				</a>
-				<a href="https://www.laregion.fr/" target="_blank">
-					<img src="./logos/occitanie.png" alt="La Région">
-				</a>
-				<a href="https://www.gard.fr/" target="_blank">
-					<img src="./logos/le gard.jpg" alt="Le Département">
-				</a>
-				<a href="https://www.saintchristollezales.fr/" target="_blank">
-					<img src="./logos/st_christol.jpg" alt="Municipalité de St Christol">
-				</a>
-				<a href="https://www.ac-montpellier.fr/" target="_blank">
-					<img src="./logos/logo académie montpeliet.svg" alt="Académie Montpellier">
-				</a>
-				<a href="https://www.canalbd.net/ales-bd/" target="_blank">
-					<img src="./logos/ales bd.avif" alt="Alès BD">
-				</a>
-				<a href="https://www.imt-mines-ales.fr/" target="_blank">
-					<img src="./logos/imt_mine.png" alt="IMT Mines Alès">
-				</a>
-				<a href="https://www.eurekales.fr/" target="_blank">
-					<img src="./logos/eurek_ales.png" alt="Eurék'Alès">
-				</a>
-				<a href="https://cineplanet.fr/" target="_blank">
-					<img src="./logos/cinéplanet.png" alt="Cinéplanet Alès">
-				</a>
-				<a href="https://www.top-office.com/top-office-ales_29_magasin.html" target="_blank">
-					<img src="./logos/top_office.png" alt="Top office Alès">
-				</a>
-				<a href="https://www.radio-bangarang.fr/" target="_blank">
-					<img src="./logos/bangarang.png" alt="Radio Bangarang">
-				</a>
-				<a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank">
-					<img src="./logos/logo jaque prévert.png" alt="Lycée Jacques Prévert">
-				</a>
-				<a href="https://jacques-prevert.mon-ent-occitanie.fr/vie-du-lycee/actualites/logo-cvl-1461053.htm" target="_blank">
-					<img src="cvl.jpeg" alt="Cvl">
-				</a>
-				<a href="https://museefermat.com/" target="_blank">
-					<img class="fermat-logo" src="fermat.png" alt="Fermat-Science">
-				</a>
-				<a href="https://www.europe-en-occitanie.eu/" target="_blank">
-					<img src="./logos/europe.jpg" alt="Europe">
-				</a>
-				<a href="https://jacques-prevert.mon-ent-occitanie.fr/vie-du-lycee/actualites/logo-cvl-1461053.htm" target="_blank">
-					<img src="./logos/MDL_LOGO.png" alt="MDL">
-				</a> 
-				<a href="https://lesmathsenscene.fr/" target="_blank">
-					<img src="./logos/mathssalon.png" alt="Mathenscènes">
-				</a> 
-				<a href="https://www.banquepopulaire.fr/sud/" target="_blank">
-					<img src="./logos/banque.jpg" alt="Banque populaire du sud">
-				</a>
-		
-			</div>
-			<div class="footer-content">
-				<div class="footer-section">
-					<h3>Contact</h3>
-					<p>Email: ce.0301778v@ac-montpellier.fr </p>
-					<p>Tél: 04 66 60 08 50</p>
-				</div>
-				<div class="footer-section">
-					<h3>Localisation</h3>
-					<p>1 pl Lucie Aubrac</p>
-					<p>30380 Saint-Christol-les-Alès</p>
-				</div>
-				<div class="footer-section">
-					<h3>Suivez-nous</h3>
-					<div class="social-links">
-						<a href="https://www.facebook.com/lyceejacquesprevert30" class="social-link">Facebook</a>
-						<a href="https://www.instagram.com/lyceeprevert?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link">Instagram</a>
-					</div>
-				</div>
-			</div>
-		</footer>	
-			</main>
-	
-		<script src="script.js"></script>
-	</body>
-	</html>
+</html>

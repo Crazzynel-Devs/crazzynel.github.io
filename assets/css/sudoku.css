@@ -1,121 +1,173 @@
+/* assets/css/sudoku.css */
 
-.sudoku-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+/* Layout Principal RECENTRÉ */
+.game-page-content {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* LE SECRET DU CENTRAGE */
+    padding-bottom: 4rem;
+    width: 100%;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #00a8ff;
+.game-container-wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 4rem; /* Espace avant les créateurs */
+}
+
+/* Header du jeu */
+.game-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.game-header p {
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+/* Interface Sudoku */
+.sudoku-interface {
+    background: rgba(25, 42, 86, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Contrôles du haut */
+.controls-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#difficulty-selector select {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: 1px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.game-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+#lives-display { color: #ff6b6b; }
+#timer { color: var(--primary-color); }
+
+/* La Grille */
+.board-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 #sudoku-board {
-  border-collapse: collapse;
-  margin: 20px auto;
-  background: #ffffff;
-  border-radius: 8px;
-  border: 2px solid #00a8ff;
+    border-collapse: collapse;
+    background: white;
+    border: 3px solid #000;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.2);
 }
 
-td {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border: 1px solid #cccccc;
-  color: #000000;
-  font-size: 1.2em;
-  transition: all 0.3s ease;
-  cursor: pointer;
+#sudoku-board td {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border: 1px solid #aaa;
+    font-size: 1.3rem;
+    color: #333;
+    cursor: text;
+    transition: background 0.2s;
+    padding: 0;
 }
 
-td:nth-child(3n) {
-  border-right: 2px solid #00a8ff;
+/* Grille épaisse 3x3 */
+#sudoku-board td:nth-child(3n) { border-right: 2px solid #000; }
+#sudoku-board td:nth-child(9) { border-right: 1px solid #aaa; }
+#sudoku-board tr:nth-child(3n) td { border-bottom: 2px solid #000; }
+#sudoku-board tr:last-child td { border-bottom: 1px solid #aaa; }
+
+/* États des cases */
+#sudoku-board td:focus {
+    background-color: rgba(0, 168, 255, 0.2);
+    outline: none;
 }
 
-tr:nth-child(3n) td {
-  border-bottom: 2px solid #00a8ff;
+#sudoku-board td.initial {
+    background-color: #e8e8e8;
+    color: #000;
+    font-weight: bold;
+    cursor: not-allowed;
 }
 
-td:focus {
-  background-color: rgba(0, 168, 255, 0.1);
-  outline: none;
+#sudoku-board td.invalid {
+    background-color: #ffcccc;
+    color: #d00;
+    animation: shake 0.3s;
 }
 
-td.initial {
-  background-color: #f0f0f0;
-  cursor: not-allowed;
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
 }
 
-td.invalid {
-  background-color: rgba(255, 0, 0, 0.1);
+/* Boutons du bas */
+.controls-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-td:nth-child(3n) {
-  border-right: 2px solid #00a8ff;
+.btn-game {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 168, 255, 0.3);
 }
 
-tr:nth-child(3n) td {
-  border-bottom: 2px solid #00a8ff;
+.btn-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 168, 255, 0.5);
 }
 
-td:focus {
-  background: rgba(0, 168, 255, 0.2);
-  outline: none;
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
 }
 
-.controls {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 20px 0;
+.btn-secondary:hover {
+    background: rgba(0, 168, 255, 0.1);
 }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: #00a8ff;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: #0084ff;
-  transform: translateY(-2px);
-}
-
-#difficulty-selector {
-  text-align: center;
-  margin: 1rem 0;
-}
-
-select {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: #1f2937;
-  color: white;
-  border: 1px solid #00a8ff;
-}
-
-#timer, #lives-display {
-  text-align: center;
-  font-size: 1.2em;
-  margin-top: 1rem;
-  color: #00a8ff;
-}
-
-#lives-display {
-  font-weight: bold;
-}
-
-.initial {
-  color: #00a8ff;
-}
-
-.invalid {
-  color: #ff4444;
+/* Responsive */
+@media (max-width: 500px) {
+    #sudoku-board td { width: 32px; height: 32px; font-size: 1rem; }
+    .sudoku-interface { padding: 1rem; }
+    .controls-top { flex-direction: column; gap: 0.5rem; }
 }

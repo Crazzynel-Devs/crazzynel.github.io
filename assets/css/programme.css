@@ -1,13 +1,26 @@
-/* Program Section */
+/* assets/css/programme.css */
+
+/* HEADER DE PAGE */
+.page-header {
+    text-align: center;
+    padding: 100px 20px 20px; /* Marge haute pour passer sous la navbar fixe */
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+}
+
+/* SECTION PROGRAMME (Affiche) */
 .program-section {
-    padding: 60px 20px;
-    background: linear-gradient(45deg, #1a1a2e, #16213e, #1a1a2e);
+    padding: 2rem;
     position: relative;
     overflow: hidden;
 }
 
 .program-container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -15,13 +28,13 @@
 
 .program-image {
     width: 100%;
-    max-width: 800px;
     height: auto;
     display: block;
     margin: 0 auto;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 168, 255, 0.2);
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .program-image:hover {
@@ -29,159 +42,213 @@
     box-shadow: 0 0 40px rgba(0, 168, 255, 0.4);
 }
 
+/* EFFETS LUMINEUX (GLOW) */
 .glow-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     background: radial-gradient(circle at center, rgba(0, 168, 255, 0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
 .glow-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; overflow: hidden; pointer-events: none;
 }
 
 .glow-line {
-    position: absolute;
-    width: 2px;
-    height: 100%;
+    position: absolute; width: 2px; height: 100%;
     background: linear-gradient(to bottom, transparent, rgba(0, 168, 255, 0.5), transparent);
     animation: glow-line-animation 8s infinite;
 }
-
 .glow-line:nth-child(1) { left: 20%; animation-delay: 0s; }
 .glow-line:nth-child(2) { left: 50%; animation-delay: 2s; }
 .glow-line:nth-child(3) { left: 80%; animation-delay: 4s; }
 
 @keyframes glow-line-animation {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
 }
 
-.title {
-    text-align: center;
-    margin-top: 40px;
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
+/* CAROUSEL (Style "Agrandit" repris de l'accueil) */
 .carousel {
-    margin: 20px auto 60px;
-    overflow: hidden;
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
-    padding: 20px;
+    max-width: 1300px; margin: 3rem auto; padding: 1rem; text-align: center;
+}
+
+.title { 
+    color: var(--primary-color); font-size: 2.2rem; margin-bottom: 2rem; 
 }
 
 .carousel-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05); border-radius: 15px; 
+    padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
+    display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px;
+    scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(0,0,0,0.3);
 }
 
 .carousel-item {
-    min-width: 300px;
-    margin: 10px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s;
+    flex: 0 0 320px; scroll-snap-align: center;
+    background: rgba(0, 0, 0, 0.3); border-radius: 15px; padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 
-.carousel-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.4);
+.carousel-item:hover { 
+    background: rgba(0, 168, 255, 0.1); transform: translateY(-8px); 
 }
 
 .carousel-item img {
-    max-width: 100px;
-    max-height: 100px;
-    display: block;
-    margin: 0 auto 15px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    width: 100%; height: 160px; object-fit: contain; margin-bottom: 15px;
+    background: white; border-radius: 8px; padding: 10px;
 }
 
-.carousel-item img:hover {
-    transform: scale(1.1);
+.carousel-item p { font-size: 1.1rem; line-height: 1.5; color: var(--text-light); }
+
+
+/* SECTION WAZAR */
+.wazar-section {
+    padding: 4rem 2rem; margin: 4rem 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 168, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
 }
 
-.carousel-item p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.4;
+.wazar-container {
+    display: flex; align-items: center; justify-content: center; gap: 3rem;
+    max-width: 1100px; margin: 0 auto;
+    background: rgba(10, 26, 59, 0.8); padding: 2rem;
+    border-radius: 20px; border: 1px solid var(--primary-color);
+    box-shadow: 0 0 40px rgba(0, 168, 255, 0.15); text-align: center;
 }
 
-/* Responsive design pour le carousel */
+.wazar-container img {
+    max-width: 350px; border-radius: 10px; border: 2px solid var(--primary-color);
+}
+
+.wazar-info h2 {
+    font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;
+}
+
+.wazar-time {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold;
+    font-size: 1.2rem; margin-top: 1.5rem; box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+}
+
+/* SECTION CRÉATEURS */
+.creators-section {
+    text-align: center; padding: 4rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+
+.creators-section h2 { 
+    color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem; 
+}
+
+.project-description { 
+    max-width: 600px; margin: 0 auto 3rem; color: #ddd; 
+}
+
+.creators-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;
+    max-width: 1000px; margin: 0 auto;
+}
+
+.creator-card {
+    width: 200px; background: rgba(255, 255, 255, 0.05); padding: 20px;
+    border-radius: 15px; transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.creator-card:hover { 
+    transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); 
+}
+
+.creator-card img {
+    width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--primary-color); margin-bottom: 15px;
+}
+
+.creator-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--text-light); }
+.creator-card p { font-size: 0.9rem; color: var(--primary-color); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .wazar-container { flex-direction: column; }
+    .wazar-container img { width: 100%; max-width: 300px; }
+}
+
 @media (max-width: 768px) {
-    .carousel-item {
-        min-width: 250px;
-    }
-    
-    .program-image {
-        max-width: 95%;
-    }
+    .page-header h1 { font-size: 2rem; }
+    .carousel-item { flex: 0 0 260px; }
 }
 
-@media screen and (max-width: 480px) {
-    .program-container {
-        padding: 10px;
-    }
 
-    .program-image {
-        max-width: 100%;
-        height: auto;
-    }
+/* --- LIGHTBOX / ZOOM PROGRAMME --- */
+.program-image {
+    cursor: zoom-in; /* Change le curseur pour indiquer qu'on peut cliquer */
+}
 
-    .glow-lines {
-        display: none;
-    }
+/* Le fond noir (caché par défaut) */
+.lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 2000; /* Au-dessus de tout (même de la navbar) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche le scroll */
+    background-color: rgba(0, 0, 0, 0.95); /* Fond très noir */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
 
-    .title {
-        font-size: 1.5rem;
-    }
+/* L'image zoomée */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 95%;
+    max-height: 95vh;
+    object-fit: contain; /* S'assure que l'image est entière */
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 168, 255, 0.3);
+    animation: zoomIn 0.3s;
+}
 
-    .carousel-container {
-        gap: 0.5rem;
-    }
+/* Le bouton fermer (X) */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+    line-height: 1;
+}
 
-    .carousel-item {
-        flex: 0 0 150px;
-        padding: 0.5rem;
-    }
+.close-lightbox:hover {
+    color: var(--primary-color);
+}
 
-    .carousel-item img {
-        max-width: 80px;
-        max-height: 80px;
-    }
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { background-color: rgba(0, 0, 0, 0); }
+    to { background-color: rgba(0, 0, 0, 0.95); }
+}
+
+/* Mobile : On s'assure que la croix est bien accessible */
+@media only screen and (max-width: 768px){
+    .close-lightbox { top: 15px; right: 20px; font-size: 40px; }
 }

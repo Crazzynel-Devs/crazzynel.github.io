@@ -1,0 +1,178 @@
+/* assets/css/suite-logique.css */
+
+/* Layout Principal */
+.game-page-content {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.game-container-wrapper {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.game-header p { color: #ccc; margin-bottom: 2rem; }
+
+/* Interface de Jeu */
+.game-interface {
+    background: rgba(25, 42, 86, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats */
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* Affichage de la suite */
+.question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+#sequence-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Point d'interrogation stylé */
+.question-mark {
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 168, 255, 0.5); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 168, 255, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 168, 255, 0.5); }
+}
+
+/* Zone Réponse */
+.answer-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+#answer-input {
+    width: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--primary-color);
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+#answer-input:focus {
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#answer-input:disabled { opacity: 0.5; cursor: not-allowed; border-color: #555; }
+
+#submit-btn {
+    padding: 0 25px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submit-btn:hover:not(:disabled) {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#submit-btn:disabled { background: #555; cursor: not-allowed; }
+
+/* Feedback */
+#feedback-msg {
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.correct { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.5); }
+.wrong { color: #f87171; text-shadow: 0 0 10px rgba(248, 113, 113, 0.5); }
+
+/* Bouton Démarrer */
+.btn-game {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+    width: 100%;
+}
+
+.btn-game:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 168, 255, 0.5);
+}

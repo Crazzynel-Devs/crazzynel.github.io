@@ -5,9 +5,12 @@ const body = document.body;
 const navItems = document.querySelectorAll('.nav-links a');
 
 // Initialize menu state
-hamburger.setAttribute('aria-label', 'Menu');
-hamburger.setAttribute('aria-expanded', 'false');
-hamburger.setAttribute('role', 'button');
+if(hamburger) {
+    hamburger.setAttribute('aria-label', 'Menu');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('role', 'button');
+    hamburger.addEventListener('click', toggleMenu);
+}
 
 // Gestion du menu hamburger
 function toggleMenu() {
@@ -22,8 +25,7 @@ function toggleMenu() {
     body.style.overflow = isExpanded ? 'hidden' : '';
 }
 
-hamburger.addEventListener('click', toggleMenu);
-
+// Interactions Menu
 navItems.forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
@@ -32,59 +34,30 @@ navItems.forEach(link => {
     });
 });
 
-// Fermer le menu quand on clique sur un lien
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', toggleMenu);
-});
-
-// Fermer le menu avec la touche Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-        toggleMenu();
-    }
-});
-
-// Close menu when clicking outside
+// Fermer le menu quand on clique sur un lien ou en dehors
 document.addEventListener('click', function(e) {
-    if (navLinks.classList.contains('active') && 
+    if (navLinks && navLinks.classList.contains('active') && 
         !navLinks.contains(e.target) && 
         !hamburger.contains(e.target)) {
         toggleMenu();
     }
 });
 
+// Fermer le menu avec Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('active')) {
+        toggleMenu();
+    }
+});
+
 // Close menu when window is resized
 window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+    if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
         toggleMenu();
     }
 });
 
-// Handle keyboard navigation
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-        toggleMenu();
-    }
-});
-
-// Add smooth scrolling for anchor links
-navItems.forEach(link => {
-    link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-                if (navLinks.classList.contains('active')) {
-                    toggleMenu();
-                }
-            }
-        }
-    });
-});
-
-// Set active menu item based on current section
+// Active menu item on scroll
 function setActiveMenuItem() {
     const sections = document.querySelectorAll('section');
     let currentSection = '';
@@ -100,42 +73,12 @@ function setActiveMenuItem() {
     navItems.forEach(item => {
         item.parentElement.classList.remove('active');
         const href = item.getAttribute('href');
-        if (href === '#' + currentSection) {
+        // Petit fix pour gérer les liens relatifs ../
+        if (href && (href === '#' + currentSection || href.endsWith('#' + currentSection))) {
             item.parentElement.classList.add('active');
         }
     });
 }
 
 window.addEventListener('scroll', setActiveMenuItem);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const TOTAL_IMAGES = 35;
-    const IMAGES_PER_LOAD = 12;
-    let currentItems = 0;
-
-    const gallery = document.getElementById('gallery');
-    const loadMoreBtn = document.getElementById('loadMore');
-
-    function loadItems() {
-        const fragment = document.createDocumentFragment();
-        const end = Math.min(currentItems + IMAGES_PER_LOAD, TOTAL_IMAGES);
-
-        for (let i = currentItems; i < end; i++) {
-            const img = document.createElement('img');
-            img.src = `PSL/PSL${i+1}.jpg`;
-            img.alt = `Image PSL ${i+1}`;
-            img.className = 'gallery-img';
-            fragment.appendChild(img);
-        }
-
-        gallery.appendChild(fragment);
-        currentItems += IMAGES_PER_LOAD;
-
-        if (currentItems >= TOTAL_IMAGES) {
-            loadMoreBtn.style.display = 'none';
-        }
-    }
-
-    loadMoreBtn.addEventListener('click', loadItems);
-    loadItems(); // Charger les premiers éléments
-});
+// FIN DU FICHIER - J'ai supprimé tout le bloc "DOMContentLoaded" de la galerie
