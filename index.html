@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon des Jeux Mathématiques 2025</title>
-    <link rel="stylesheet" href="accueil.css">
-    <script src="accueil.js" defer></script>
-    <script src="countdown.js" defer></script>
-    <meta name="author" content="Salon des Jeux Mathématiques">
-    <meta property="og:image" content="logos/logo_salon.jpeg">
-    <meta property="og:logo" content="logos/logo_salon.jpeg">
-    <meta name="twitter:image" content="logos/logo_salon.jpeg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="description" content="Bienvenue au Salon des Jeux Mathématiques, un événement où vous pourrez explorer des jeux ludiques autour des mathématiques, des défis et des puzzles." />
-    <meta name="keywords" content="jeux mathématiques, salon des jeux, événements mathématiques, défis mathématiques" />
-    <meta property="og:title" content="Salon des Jeux Mathématiques" />
-    <meta property="og:description" content="Venez participer au Salon des Jeux Mathématiques et découvrir des jeux amusants tout en apprenant les mathématiques." />
-    <link rel="icon" href="/logos/logo_salon.jpeg" type="image/jpeg">
+    <title>Salon des Jeux Mathématiques 2025 - Lycée Jacques Prévert</title>
+    
+    <meta name="description" content="Découvrez les maths autrement au Salon des Jeux Mathématiques ! Rendez-vous le 22 Mars 2025.">
+    <meta name="author" content="Élèves NSI Lycée Jacques Prévert">
 
+    <meta property="og:image" content="assets/img/logo_salon.jpeg">
+    <meta property="og:title" content="Salon des Jeux Mathématiques 2025">
+
+    <link rel="icon" href="assets/img/logo_salon.jpeg" type="image/jpeg">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/accueil.css">
+    
+    <script src="assets/js/accueil.js" defer></script>
+    <script src="assets/js/countdown.js" defer></script>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">
-            <img src="logo_salon.jpeg" alt="Logo du salon">
+            <a href="./">
+                <img src="assets/img/logo_salon.jpeg" alt="Logo Salon">
+            </a>
         </div>
-        <div class="hamburger">
+        
+        <div class="hamburger" aria-label="Menu" role="button">
             <div></div>
             <div></div>
             <div></div>
         </div>
+
         <div class="nav-links" id="navLinks">
             <ul>
-                <li class="active"><a href="https://prevert-maths.cyborgbulls.fr">Accueil</a></li>
-                <li><a href="programme.html">Programme</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="jeu.html">Jeux</a></li>
+                <li class="active"><a href="./">Accueil</a></li>
+                <li><a href="programme/">Programme</a></li>
+                <li><a href="galerie/">Galerie</a></li>
+                <li><a href="jeux/">Jeux</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -42,10 +47,12 @@
 
     <header class="hero">
         <div class="hero-overlay"></div>
-        <img src="logos/copie_affiche.jpg" alt="Affiche du salon" class="hero-image">
+        <img src="assets/logos/copie_affiche.jpg" alt="Affiche officielle" class="hero-image">
+        
         <div class="hero-content">
             <h1>Salon des Jeux Mathématiques 2025</h1>
-            <p>22 Mars 2025 de 10h à 18h</p>
+            <p>📅 22 Mars 2025 • 10h à 18h</p>
+            
             <div id="countdown" class="countdown">
                 <div class="countdown-item">
                     <span id="days">00</span>
@@ -68,184 +75,153 @@
     </header>
 
     <main>
-        <section>
-          <h2>Découvrez notre événement qui aura lieu le 22 Mars 2025.</h2>
-          <div class="buttons">
-            <a href="programme.html" class="btn">Voir le programme</a>
-            <a href="videos.html" class="btn">Regarder nos vidéos</a>
-          </div>
+        <section class="intro-section">
+            <h2>Prêts à relever le défi ?</h2>
+            <p>Découvrez notre événement unique ouvert à tous.</p>
+            <div class="buttons">
+                <a href="programme/" class="btn">Voir le programme</a>
+                <a href="galerie/#videos" class="btn">Regarder nos vidéos</a>
+            </div>
         </section>
-      </main>
  
-      <section id="partners" class="carousel">
-        <h1 class="title">Ils seront présents au Salon des Mathématiques</h1>
-        <div class="carousel-container">
-            <div class="carousel-track">
-                <div class="carousel-item">
-                    <a href="https://cielebazarambulant.wordpress.com/" target="_blank">
-                        <img src="logos/jeu en colabe/theatre.webp" alt="Compagnie le bazar ambulant">
-                    </a>
-                    <p>La troupe de théâtre : Compagnie le bazar ambulant pour la pièce "Pile Poil l'infini"</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.facebook.com/lezembouquines/" target="_blank">
-                        <img src="logos/jeu en colabe/lezan.jpg" alt="Club jeux de Lézan">
-                    </a>
-                    <p>Club jeux de Lézan : Ils animeront un Escape Game et un espace jeux de réflexion</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.lacasajeux.fr/" target="_blank">
-                        <img src="logos/jeu en colabe/casa.png" alt="La Casa Jeux">
-                    </a>
-                    <p>Le magasin La Casa Jeux tiendra un stand avec démonstration de jeux</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://echiquiergrandales.sportsregions.fr/" target="_blank">
-                        <img src="logos/jeu en colabe/echec.jpg" alt="Club d'échecs d'Alès">
-                    </a>
-                    <p>Club d'échecs d'Alès : organisera un tournoi de Blitz (échecs rapides) et présentera le jeu d'échecs</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://lareinedesjeux.fr/" target="_blank">
-                        <img src="logos/la_reine.png" alt="La reine des jeux">
-                    </a>
-                    <p>Ils seront là pour vous proposer une large sélection de jeux de société, jeux de cartes et accessoires ludiques. Parfaits pour les passionnés de jeux en tout genre.</p>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://alesbridge.club.ffbridge.fr/" target="_blank">
-                        <img src="logos/bridge.jpg" alt="Club de Bridge d'Alès">
-                    </a>
-                    <p>Ils seront là pour vous accueillir et vous informer sur les événements, les tournois et les activités liées à la pratique du bridge dans la région d'Alès.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="wazar" class="wazar-section">
-        <div class="wazar-container">
-            <img src="logos/Wazar_salon2025.jpeg" alt="Wazar">
-            <div class="wazar-info">
-                <h2>Concert Exceptionnel : WAZAR</h2>
-                <p>Rejoignez-nous dans le grand hall pour un moment musical unique !</p>
-                <div class="wazar-time">
-                    <span> 12h30 - 13h45</span>
+        <section id="partners" class="carousel">
+            <h2 class="title">Ils animent le Salon</h2>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <a href="https://cielebazarambulant.wordpress.com/" target="_blank">
+                            <img src="assets/logos/jeu_en_collab/theatre.webp" alt="Théâtre">
+                        </a>
+                        <p><strong>Cie Le Bazar Ambulant</strong><br>"Pile Poil l'infini"</p>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.facebook.com/lezembouquines/" target="_blank">
+                            <img src="assets/logos/jeu_en_collab/lezan.jpg" alt="Club Lézan">
+                        </a>
+                        <p><strong>Club jeux de Lézan</strong><br>Escape Game & Réflexion</p>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.lacasajeux.fr/" target="_blank">
+                            <img src="assets/logos/jeu_en_collab/casa.png" alt="La Casa Jeux">
+                        </a>
+                        <p><strong>La Casa Jeux</strong><br>Démonstrations</p>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://echiquiergrandales.sportsregions.fr/" target="_blank">
+                            <img src="assets/logos/jeu_en_collab/echec.jpg" alt="Échecs Alès">
+                        </a>
+                        <p><strong>Club d'échecs</strong><br>Tournoi de Blitz</p>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://lareinedesjeux.fr/" target="_blank">
+                            <img src="assets/logos/la_reine.png" alt="Reine des Jeux">
+                        </a>
+                        <p><strong>La Reine des Jeux</strong><br>Jeux de société</p>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://alesbridge.club.ffbridge.fr/" target="_blank">
+                            <img src="assets/logos/bridge.jpg" alt="Bridge Alès">
+                        </a>
+                        <p><strong>Club de Bridge</strong><br>Initiation</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="creators" class="creators-section">
-        <h2>Les Créateurs du Projet</h2>
-        <div class="project-description">
-            <p>Projet Terminale NSI 2024-2025</p>
-            <p>Sous la direction de M. MARTINEZ</p>
-        </div>
-        <div class="creators-container">
-            <div class="creator-card">
-                <img src="créateur/mathis.jpeg" alt="CHAMBEU MATHIS">
-                <h3>CHAMBEU MATHIS</h3>
-                <p>Élève Terminale NSI</p>
-            </div>
-            <div class="creator-card">
-                <img src="créateur/eli.jpeg" alt="ELI JARDIN">
-                <h3>ELI JARDIN</h3>
-                <p>Élève Terminale NSI</p>
-            </div>
-            <div class="creator-card">
-                <img src="créateur/zakaria.jpeg" alt="ZAKARIA BEKKAR">
-                <h3>ZAKARIA BEKKAR</h3>
-                <p>Élève Terminale NSI</p>
-            </div>
-            <div class="creator-card">
-                <img src="créateur/berat.jpeg" alt="YILDIZ Berat">
-                <h3>YILDIZ Berat</h3>
-                <p>Élève Terminale NSI</p>
-            </div>
-            <div class="creator-card">
-                <img src="créateur/antoine.jpg" alt="FABRE-C. Antoine">
-                <h3>FABRE-CHARDOUNAUD Antoine</h3>
-                <p>Élève Terminale NSI</p>
-            </div>
-        </div>
-    </section>
-        
+        </section>
 
-<footer id="contact" class="footer">
-    <div class="footer-bottom">
-        <h2>LES PARTENAIRES</h2>
-    </div>
-    <div class="logo-container">
-        <a href="https://www.laregion.fr/" target="_blank">
-            <img src="logos/occitanie.png" alt="La Région">
-        </a>
-        <a href="https://www.gard.fr/" target="_blank">
-            <img src="logos/le gard.jpg" alt="Le Département">
-        </a>
-        <a href="https://www.saintchristollezales.fr/" target="_blank">
-            <img src="logos/st_christol.jpg" alt="Municipalité de St Christol">
-        </a>
-        <a href="https://www.ac-montpellier.fr/" target="_blank">
-            <img src="logos/logo académie montpeliet.svg" alt="Académie Montpellier">
-        </a>
-        <a href="https://www.canalbd.net/ales-bd/" target="_blank">
-            <img src="logos/ales bd.avif" alt="Alès BD">
-        </a>
-        <a href="https://www.imt-mines-ales.fr/" target="_blank">
-            <img src="logos/imt_mine.png" alt="IMT Mines Alès">
-        </a>
-        <a href="https://www.eurekales.fr/" target="_blank">
-            <img src="logos/eurek_ales.png" alt="Eurék'Alès">
-        </a>
-        <a href="https://cineplanet.fr/" target="_blank">
-            <img src="logos/cinéplanet.png" alt="Cinéplanet Alès">
-        </a>
-        <a href="https://www.top-office.com/top-office-ales_29_magasin.html" target="_blank">
-            <img src="logos/top_office.png" alt="Top office Alès">
-        </a>
-        <a href="https://www.radio-bangarang.fr/" target="_blank">
-            <img src="logos/bangarang.png" alt="Radio Bangarang">
-        </a>
-        <a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank">
-            <img src="/logos/logo jaque prévert.png" alt="Lycée Jacques Prévert">
-        </a>
-        <a href="https://jacques-prevert.mon-ent-occitanie.fr/vie-du-lycee/actualites/logo-cvl-1461053.htm" target="_blank">
-            <img src="cvl.jpeg" alt="Cvl"> 
-        </a>
-        <a href="https://museefermat.com/" target="_blank">
-            <img class="fermat-logo" src="fermat.png" alt="Fermat-Science"> 
-        </a>
-        <a href="https://www.europe-en-occitanie.eu/" target="_blank">
-            <img src="logos/europe.jpg" alt="Europe">
-        </a>
-        <a href="https://jacques-prevert.mon-ent-occitanie.fr/vie-du-lycee/actualites/logo-cvl-1461053.htm" target="_blank">
-            <img src="logos/MDL_LOGO.png" alt="MDL">
-        </a> 
-        <a href="https://lesmathsenscene.fr/" target="_blank">
-            <img src="logos/mathssalon.png" alt="Mathenscènes">
-        </a> 
-        <a href="https://www.banquepopulaire.fr/sud/" target="_blank">
-            <img src="logos/banque.jpg" alt="Banque populaire du sud">
-        </a> 
-
-    </div>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: ce.0301778v@ac-montpellier.fr </p>
-            <p>Tél: 04 66 60 08 50</p>
-        </div>
-        <div class="footer-section">
-            <h3>Localisation</h3>
-            <p>1 pl Lucie Aubrac</p>
-            <p>30380 Saint-Christol-les-Alès</p>
-        </div>
-        <div class="footer-section">
-            <h3>Suivez-nous</h3>
-            <div class="social-links">
-                <a href="https://www.facebook.com/lyceejacquesprevert30" class="social-link">Facebook</a>
-                <a href="https://www.instagram.com/lyceeprevert?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link">Instagram</a>
+        <section id="wazar" class="wazar-section">
+            <div class="wazar-container">
+                <img src="assets/logos/Wazar_salon2025.jpeg" alt="Groupe Wazar">
+                <div class="wazar-info">
+                    <h2>Concert : WAZAR</h2>
+                    <p>Un moment musical unique dans le grand hall.</p>
+                    <div class="wazar-time">
+                        <span>🎵 12h30 - 13h45</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</footer>
+        </section>
+
+        <section id="creators" class="creators-section">
+            <h2>L'Équipe NSI</h2>
+            <div class="project-description">
+                <p>Projet de Terminale 2024-2025 • Lycée Jacques Prévert</p>
+                <p>Encadré par M. Martinez</p>
+            </div>
+            <div class="creators-container">
+                <div class="creator-card">
+                    <img src="assets/créateur/mathis.jpeg" alt="Mathis Chambeu">
+                    <h3>Mathis Chambeu</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="assets/créateur/eli.jpeg" alt="Eli Jardin">
+                    <h3>Eli Jardin</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="assets/créateur/zakaria.jpeg" alt="Zakaria Bekkar">
+                    <h3>Zakaria Bekkar</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="assets/créateur/berat.jpeg" alt="Berat Yildiz">
+                    <h3>Berat Yildiz</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="assets/créateur/antoine.jpg" alt="Antoine Fabre-C.">
+                    <h3>Antoine Fabre-C.</h3>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer-bottom">
+            <h2>Nos Partenaires Institutionnels</h2>
+        </div>
+        
+        <div class="logo-container">
+            <a href="https://www.laregion.fr/" target="_blank"><img src="assets/logos/occitanie.png" alt="Région Occitanie"></a>
+            <a href="https://www.gard.fr/" target="_blank"><img src="assets/logos/le_gard.jpg" alt="Département du Gard"></a>
+            <a href="https://www.saintchristollezales.fr/" target="_blank"><img src="assets/logos/st_christol.jpg" alt="Saint-Christol"></a>
+            <a href="https://www.ac-montpellier.fr/" target="_blank"><img src="assets/logos/logo_academie_montpellier.svg" alt="Académie"></a>
+            <a href="https://www.imt-mines-ales.fr/" target="_blank"><img src="assets/logos/imt_mine.png" alt="IMT Mines"></a>
+            <a href="https://www.eurekales.fr/" target="_blank"><img src="assets/logos/eurek_ales.png" alt="Eurék'Alès"></a>
+            <a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank"><img src="assets/logos/logo jaque prévert.png" alt="Lycée"></a>
+            
+            <a href="#" target="_blank"><img src="assets/img/cvl.jpeg" alt="CVL"></a>
+            <a href="https://museefermat.com/" target="_blank"><img src="assets/img/fermat.png" alt="Musée Fermat"></a>
+            
+            <a href="https://www.europe-en-occitanie.eu/" target="_blank"><img src="assets/logos/europe.jpg" alt="Europe"></a>
+            <a href="#" target="_blank"><img src="assets/logos/MDL_LOGO.png" alt="MDL"></a> 
+            <a href="https://lesmathsenscene.fr/" target="_blank"><img src="assets/logos/mathssalon.png" alt="Maths en Scène"></a> 
+            <a href="https://www.banquepopulaire.fr/sud/" target="_blank"><img src="assets/logos/banque.jpg" alt="Banque Populaire"></a> 
+            <a href="https://www.canalbd.net/ales-bd/" target="_blank"><img src="assets/logos/ales-bd.avif" alt="Alès BD"></a>
+            <a href="https://cineplanet.fr/" target="_blank"><img src="assets/logos/cineplanet.png" alt="cineplanet"></a>
+            <a href="https://www.top-office.com/" target="_blank"><img src="assets/logos/top_office.png" alt="Top Office"></a>
+            <a href="https://www.radio-bangarang.fr/" target="_blank"><img src="assets/logos/bangarang.png" alt="Bangarang"></a>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 ce.0301778v@ac-montpellier.fr</p>
+                <p>📞 04 66 60 08 50</p>
+            </div>
+            <div class="footer-section">
+                <h3>Localisation</h3>
+                <p>📍 Lycée Jacques Prévert</p>
+                <p>30380 Saint-Christol-les-Alès</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/lyceejacquesprevert30" class="social-link">Facebook</a>
+                    <a href="https://www.instagram.com/lyceeprevert" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Salon des Jeux Mathématiques - NSI Prévert</p>
+        </div>
+    </footer>
+
 </body>
 </html>

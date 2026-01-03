@@ -1,0 +1,160 @@
+/* assets/css/pi.css */
+
+/* Layout Principal */
+.game-page-content {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.game-container-wrapper {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.game-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+    font-family: 'Times New Roman', serif; /* Touche mathématique */
+}
+
+.game-header p { color: #ccc; margin-bottom: 2rem; font-size: 1.1rem; }
+
+/* Interface Pi */
+.pi-interface {
+    background: rgba(25, 42, 86, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Zone de saisie */
+.input-section label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#birthdate {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 120px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#birthdate:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+#search-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.4);
+}
+
+/* Zone Résultat */
+#result-area {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-title {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+#position {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Visualiseur de décimales */
+.pi-visualizer {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: #888;
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.highlight {
+    color: #4ade80; /* Vert fluo */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    font-size: 1.8rem;
+    margin: 0 5px;
+}
+
+/* Crédits spécifiques */
+.credits-pi {
+    text-align: center;
+    color: #888;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.credits-pi h3 { font-size: 1rem; margin-bottom: 0.5rem; color: #aaa; }
+
+.hidden { display: none; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .input-wrapper { flex-direction: column; }
+    #birthdate { width: 100%; }
+    #search-btn { width: 100%; }
+    .pi-visualizer { font-size: 1.2rem; }
+}

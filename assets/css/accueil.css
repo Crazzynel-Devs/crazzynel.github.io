@@ -1,0 +1,146 @@
+/* assets/css/accueil.css */
+
+main { padding-top: 70px; }
+
+/* HERO SECTION */
+.hero {
+    position: relative; height: 100vh; min-height: 600px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; overflow: hidden;
+}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.hero-content { position: relative; z-index: 2; padding: 20px; }
+.hero h1 { font-size: 3.5rem; color: var(--primary-color); text-shadow: 0 0 20px rgba(0, 168, 255, 0.5); margin-bottom: 1rem; }
+.hero p { font-size: 1.5rem; margin-bottom: 2rem; }
+
+/* COUNTDOWN */
+.countdown { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+.countdown-item {
+    background: rgba(0, 0, 0, 0.6); padding: 1rem; border-radius: 10px; min-width: 90px;
+    border: 1px solid rgba(0, 168, 255, 0.3); backdrop-filter: blur(5px);
+}
+.countdown-item span { font-size: 2rem; font-weight: bold; color: var(--primary-color); display: block; }
+.countdown-item .label { font-size: 0.9rem; color: #ddd; margin-top: 5px; }
+
+/* Message quand l'event est fini (géré par JS) */
+.event-finished {
+    background: rgba(255, 0, 0, 0.2); border: 2px solid red; padding: 20px; border-radius: 10px;
+    animation: fadeIn 1s ease;
+}
+
+/* INTRO (Centrée) */
+.intro-section {
+    text-align: center; padding: 4rem 1rem; max-width: 800px; margin: 0 auto;
+}
+.intro-section h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+.intro-section p { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
+.buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.btn {
+    padding: 12px 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white; text-decoration: none; border-radius: 30px; font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3); transition: 0.3s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 168, 255, 0.5); }
+
+/* CAROUSEL (Agrandit) */
+.carousel {
+    max-width: 1300px; /* On passe de 1000px à 1300px pour plus de largeur */
+    margin: 3rem auto; 
+    padding: 1rem; 
+    text-align: center;
+}
+
+.title { 
+    color: var(--primary-color); 
+    font-size: 2.2rem; /* Titre un peu plus gros */
+    margin-bottom: 2rem; 
+}
+
+.carousel-container {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 15px; 
+    padding: 30px; /* Plus d'espace intérieur */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-track {
+    display: flex; 
+    gap: 30px; /* Plus d'espace entre les cartes (20px -> 30px) */
+    overflow-x: auto; 
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: thin; 
+    scrollbar-color: var(--primary-color) rgba(0,0,0,0.3);
+}
+
+.carousel-item {
+    flex: 0 0 320px; /* Carte élargie : 250px -> 320px */
+    scroll-snap-align: center;
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 15px; /* Bordures plus arrondies */
+    padding: 25px; /* Plus de confort interne */
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    transition: 0.3s;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.carousel-item:hover { 
+    background: rgba(0, 168, 255, 0.1); 
+    transform: translateY(-8px); /* Effet de levée plus prononcé */
+}
+
+.carousel-item img {
+    width: 100%; 
+    height: 160px; /* Image plus grande : 120px -> 160px */
+    object-fit: contain; 
+    margin-bottom: 15px;
+    background: white; 
+    border-radius: 8px; 
+    padding: 10px;
+}
+
+.carousel-item p { 
+    font-size: 1.1rem; /* Texte plus lisible */
+    line-height: 1.5; 
+}
+/* WAZAR */
+.wazar-section { padding: 4rem 1rem; text-align: center; background: rgba(0,0,0,0.2); }
+.wazar-container {
+    display: flex; align-items: center; justify-content: center; gap: 2rem;
+    max-width: 900px; margin: 0 auto; background: rgba(0,0,0,0.4); padding: 2rem;
+    border-radius: 20px; border: 1px solid var(--primary-color);
+}
+.wazar-container img { width: 300px; border-radius: 10px; border: 2px solid var(--primary-color); }
+.wazar-time span { background: var(--primary-color); padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+
+/* CREATEURS (CENTRÉ) */
+.creators-section {
+    text-align: center; padding: 4rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+.creators-section h2 { color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem; }
+.project-description { max-width: 600px; margin: 0 auto 3rem; color: #ddd; }
+.creators-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1000px; margin: 0 auto;
+}
+.creator-card {
+    width: 200px; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px;
+    transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
+}
+.creator-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
+.creator-card img {
+    width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--primary-color); margin-bottom: 15px;
+}
+.creator-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .wazar-container { flex-direction: column; }
+    .buttons { flex-direction: column; }
+}

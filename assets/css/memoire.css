@@ -1,0 +1,183 @@
+/* assets/css/memoire.css */
+
+/* Layout Principal */
+.game-page-content {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.game-container-wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.game-header p { color: #ccc; margin-bottom: 2rem; }
+
+/* Zone de Jeu */
+.memory-game-container {
+    background: rgba(25, 42, 86, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Stats */
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Plateau de cartes */
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    margin: 0 auto;
+    perspective: 1000px; /* Nécessaire pour l'effet 3D */
+}
+
+/* Carte */
+.cube {
+    width: 100%;
+    aspect-ratio: 1; /* Carré parfait */
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    border-radius: 10px;
+}
+
+.cube.flipped {
+    transform: rotateY(180deg);
+    cursor: default;
+}
+
+.cube.matched {
+    transform: rotateY(180deg);
+    opacity: 0.5; /* Grisé quand trouvé */
+    cursor: default;
+}
+
+/* Faces de la carte */
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Dos de la carte (visible au début) */
+.face.back {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Face de la carte (Image) */
+.face.front {
+    background-color: white;
+    transform: rotateY(180deg);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Images des cartes (Adaptées de ton ancien code) */
+/* Remplace les URLs par des emojis ou tes propres images si tu les as */
+[data-tile="egg"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-egg.svg'); }
+[data-tile="dino"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-dino1.svg'); }
+[data-tile="ahahah"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-ah.svg'); }
+[data-tile="tri"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-tri.svg'); }
+[data-tile="ptero"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-ptero.svg'); }
+[data-tile="erupt"] .front { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-erupt.svg'); }
+
+/* Overlay Victoire */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gameover {
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--primary-color);
+}
+
+.reset-btn {
+    margin-top: 1rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    background: var(--secondary-color);
+}
+
+.hidden { display: none; }
+
+/* Responsive */
+@media (max-width: 500px) {
+    .board { grid-template-columns: repeat(3, 1fr); }
+    .cube { height: 80px; }
+}

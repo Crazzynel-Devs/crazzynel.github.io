@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku - Salon des Jeux Mathématiques 2025</title>
+    
+    <meta name="description" content="Testez vos compétences en résolution de puzzles avec notre Sudoku interactif.">
+    
+    <link rel="icon" href="../assets/img/logo_salon.jpeg" type="image/jpeg">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/sudoku.css">
+
+    <script src="../assets/js/accueil.js" defer></script>
+    <script src="../assets/js/sudoku.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../">
+                <img src="../assets/img/logo_salon.jpeg" alt="Logo Salon">
+            </a>
+        </div>
+        <div class="hamburger" aria-label="Menu" role="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="../">Accueil</a></li>
+                <li><a href="../programme/">Programme</a></li>
+                <li><a href="../galerie/">Galerie</a></li>
+                <li class="active"><a href="../jeux/">Jeux</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="game-page-content">
+        
+        <section class="game-container-wrapper">
+            <div class="game-header">
+                <h1>Sudoku Moderne 🎯</h1>
+                <p>Remplissez la grille pour que chaque ligne, colonne et carré de 3x3 contienne tous les chiffres de 1 à 9.</p>
+            </div>
+
+            <div class="sudoku-interface">
+                <div class="controls-top">
+                    <div id="difficulty-selector">
+                        <label for="difficulty">Niveau :</label>
+                        <select id="difficulty">
+                            <option value="easy">Facile</option>
+                            <option value="medium">Moyen</option>
+                            <option value="hard">Difficile</option>
+                        </select>
+                    </div>
+                    <div class="game-stats">
+                        <div id="timer">⏱️ 00:00</div>
+                        <div id="lives-display">❤️ Vies: 5</div>
+                    </div>
+                </div>
+
+                <div class="board-wrapper">
+                    <table id="sudoku-board">
+                        <tbody>
+                            <tr><td data-row="0" data-col="0"></td><td data-row="0" data-col="1"></td><td data-row="0" data-col="2"></td><td data-row="0" data-col="3"></td><td data-row="0" data-col="4"></td><td data-row="0" data-col="5"></td><td data-row="0" data-col="6"></td><td data-row="0" data-col="7"></td><td data-row="0" data-col="8"></td></tr>
+                            <tr><td data-row="1" data-col="0"></td><td data-row="1" data-col="1"></td><td data-row="1" data-col="2"></td><td data-row="1" data-col="3"></td><td data-row="1" data-col="4"></td><td data-row="1" data-col="5"></td><td data-row="1" data-col="6"></td><td data-row="1" data-col="7"></td><td data-row="1" data-col="8"></td></tr>
+                            <tr><td data-row="2" data-col="0"></td><td data-row="2" data-col="1"></td><td data-row="2" data-col="2"></td><td data-row="2" data-col="3"></td><td data-row="2" data-col="4"></td><td data-row="2" data-col="5"></td><td data-row="2" data-col="6"></td><td data-row="2" data-col="7"></td><td data-row="2" data-col="8"></td></tr>
+                            <tr><td data-row="3" data-col="0"></td><td data-row="3" data-col="1"></td><td data-row="3" data-col="2"></td><td data-row="3" data-col="3"></td><td data-row="3" data-col="4"></td><td data-row="3" data-col="5"></td><td data-row="3" data-col="6"></td><td data-row="3" data-col="7"></td><td data-row="3" data-col="8"></td></tr>
+                            <tr><td data-row="4" data-col="0"></td><td data-row="4" data-col="1"></td><td data-row="4" data-col="2"></td><td data-row="4" data-col="3"></td><td data-row="4" data-col="4"></td><td data-row="4" data-col="5"></td><td data-row="4" data-col="6"></td><td data-row="4" data-col="7"></td><td data-row="4" data-col="8"></td></tr>
+                            <tr><td data-row="5" data-col="0"></td><td data-row="5" data-col="1"></td><td data-row="5" data-col="2"></td><td data-row="5" data-col="3"></td><td data-row="5" data-col="4"></td><td data-row="5" data-col="5"></td><td data-row="5" data-col="6"></td><td data-row="5" data-col="7"></td><td data-row="5" data-col="8"></td></tr>
+                            <tr><td data-row="6" data-col="0"></td><td data-row="6" data-col="1"></td><td data-row="6" data-col="2"></td><td data-row="6" data-col="3"></td><td data-row="6" data-col="4"></td><td data-row="6" data-col="5"></td><td data-row="6" data-col="6"></td><td data-row="6" data-col="7"></td><td data-row="6" data-col="8"></td></tr>
+                            <tr><td data-row="7" data-col="0"></td><td data-row="7" data-col="1"></td><td data-row="7" data-col="2"></td><td data-row="7" data-col="3"></td><td data-row="7" data-col="4"></td><td data-row="7" data-col="5"></td><td data-row="7" data-col="6"></td><td data-row="7" data-col="7"></td><td data-row="7" data-col="8"></td></tr>
+                            <tr><td data-row="8" data-col="0"></td><td data-row="8" data-col="1"></td><td data-row="8" data-col="2"></td><td data-row="8" data-col="3"></td><td data-row="8" data-col="4"></td><td data-row="8" data-col="5"></td><td data-row="8" data-col="6"></td><td data-row="8" data-col="7"></td><td data-row="8" data-col="8"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="controls-bottom">
+                    <button id="generate-button" class="btn-game">Nouvelle Partie</button>
+                    <button id="solve-button" class="btn-game btn-secondary">Solution</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="creators" class="creators-section">
+            <h2>L'Équipe NSI</h2>
+            <div class="project-description">
+                <p>Projet Terminale 2024-2025 • Lycée Jacques Prévert</p>
+                <p>Sous la direction de M. Martinez</p>
+            </div>
+            <div class="creators-container">
+                <div class="creator-card">
+                    <img src="../assets/créateur/mathis.jpeg" alt="Mathis Chambeu">
+                    <h3>Mathis Chambeu</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="../assets/créateur/eli.jpeg" alt="Eli Jardin">
+                    <h3>Eli Jardin</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="../assets/créateur/zakaria.jpeg" alt="Zakaria Bekkar">
+                    <h3>Zakaria Bekkar</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="../assets/créateur/berat.jpeg" alt="Berat Yildiz">
+                    <h3>Berat Yildiz</h3>
+                </div>
+                <div class="creator-card">
+                    <img src="../assets/créateur/antoine.jpg" alt="Antoine Fabre-C.">
+                    <h3>Antoine Fabre-C.</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer-bottom">
+            <h2>Partenaires</h2>
+        </div>
+        <div class="logo-container">
+            <a href="https://www.laregion.fr/" target="_blank"><img src="../assets/logos/occitanie.png" alt="Occitanie"></a>
+            <a href="https://www.gard.fr/" target="_blank"><img src="../assets/logos/le_gard.jpg" alt="Gard"></a>
+            <a href="https://www.saintchristollezales.fr/" target="_blank"><img src="../assets/logos/st_christol.jpg" alt="Saint-Christol"></a>
+            <a href="https://www.ac-montpellier.fr/" target="_blank"><img src="../assets/logos/logo_academie_montpellier.svg" alt="Académie"></a>
+            <a href="https://www.imt-mines-ales.fr/" target="_blank"><img src="../assets/logos/imt_mine.png" alt="IMT Mines"></a>
+            <a href="https://www.eurekales.fr/" target="_blank"><img src="../assets/logos/eurek_ales.png" alt="Eurék'Alès"></a>
+            <a href="https://cineplanet.fr/" target="_blank"><img src="../assets/logos/cineplanet.png" alt="cineplanet"></a>
+            <a href="https://www.top-office.com/" target="_blank"><img src="../assets/logos/top_office.png" alt="Top Office"></a>
+            <a href="https://www.radio-bangarang.fr/" target="_blank"><img src="../assets/logos/bangarang.png" alt="Bangarang"></a>
+            <a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank"><img src="../assets/logos/logo jaque prévert.png" alt="Prévert"></a>
+            <a href="#" target="_blank"><img src="../assets/img/cvl.jpeg" alt="CVL"></a>
+            <a href="https://museefermat.com/" target="_blank"><img src="../assets/img/fermat.png" alt="Fermat"></a>
+            <a href="https://www.europe-en-occitanie.eu/" target="_blank"><img src="../assets/logos/europe.jpg" alt="Europe"></a>
+            <a href="#" target="_blank"><img src="../assets/logos/MDL_LOGO.png" alt="MDL"></a> 
+            <a href="https://lesmathsenscene.fr/" target="_blank"><img src="../assets/logos/mathssalon.png" alt="Maths en Scène"></a> 
+            <a href="https://www.banquepopulaire.fr/sud/" target="_blank"><img src="../assets/logos/banque.jpg" alt="Banque Populaire"></a> 
+            <a href="https://www.canalbd.net/ales-bd/" target="_blank"><img src="../assets/logos/ales-bd.avif" alt="Alès BD"></a>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 ce.0301778v@ac-montpellier.fr</p>
+            </div>
+            <div class="footer-section">
+                <h3>Localisation</h3>
+                <p>📍 Lycée Jacques Prévert</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/lyceejacquesprevert30" class="social-link">Facebook</a>
+                    <a href="https://www.instagram.com/lyceeprevert" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

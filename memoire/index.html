@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Mémoire - Salon des Jeux Mathématiques 2025</title>
+    
+    <meta name="description" content="Testez votre mémoire avec notre jeu de paires. Retrouvez les dinosaures identiques !">
+    
+    <link rel="icon" href="../assets/img/logo_salon.jpeg" type="image/jpeg">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/memoire.css">
+
+    <script src="../assets/js/accueil.js" defer></script>
+    <script src="../assets/js/memoire.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../">
+                <img src="../assets/img/logo_salon.jpeg" alt="Logo Salon">
+            </a>
+        </div>
+        <div class="hamburger" aria-label="Menu" role="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="../">Accueil</a></li>
+                <li><a href="../programme/">Programme</a></li>
+                <li><a href="../galerie/">Galerie</a></li>
+                <li class="active"><a href="../jeux/">Jeux</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="game-page-content">
+        <div class="content-wrapper">
+            
+            <section class="game-container-wrapper">
+                <div class="game-header">
+                    <h1>Jeu de Mémoire 🧠</h1>
+                    <p>Retrouvez toutes les paires de dinosaures le plus vite possible !</p>
+                </div>
+
+                <div class="memory-game-container">
+                    
+                    <div class="game-stats">
+                        <span>⏱️ <span id="time">0</span>s</span>
+                        <span>🔄 Coups: <span id="moves">0</span></span>
+                    </div>
+
+                    <div class="board"></div>
+                    
+                    <div class="overlay hidden">
+                        <div class="gameover">
+                            <h2>Victoire ! 🎉</h2>
+                            <p>Tu as trouvé toutes les paires !</p>
+                            <button class="reset-btn">Rejouer</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="creators" class="creators-section">
+                <h2>L'Équipe NSI</h2>
+                <div class="project-description">
+                    <p>Projet Terminale 2024-2025 • Lycée Jacques Prévert</p>
+                    <p>Sous la direction de M. Martinez</p>
+                </div>
+                <div class="creators-container">
+                    <div class="creator-card">
+                        <img src="../assets/créateur/mathis.jpeg" alt="Mathis Chambeu">
+                        <h3>Mathis Chambeu</h3>
+                    </div>
+                    <div class="creator-card">
+                        <img src="../assets/créateur/eli.jpeg" alt="Eli Jardin">
+                        <h3>Eli Jardin</h3>
+                    </div>
+                    <div class="creator-card">
+                        <img src="../assets/créateur/zakaria.jpeg" alt="Zakaria Bekkar">
+                        <h3>Zakaria Bekkar</h3>
+                    </div>
+                    <div class="creator-card">
+                        <img src="../assets/créateur/berat.jpeg" alt="Berat Yildiz">
+                        <h3>Berat Yildiz</h3>
+                    </div>
+                    <div class="creator-card">
+                        <img src="../assets/créateur/antoine.jpg" alt="Antoine Fabre-C.">
+                        <h3>Antoine Fabre-C.</h3>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div class="clone hidden">
+        <div class="face front"></div>
+        <div class="face back">?</div>
+    </div>
+
+    <footer id="contact" class="footer">
+        <div class="footer-bottom">
+            <h2>Partenaires</h2>
+        </div>
+        <div class="logo-container">
+            <a href="https://www.laregion.fr/" target="_blank"><img src="../assets/logos/occitanie.png" alt="Occitanie"></a>
+            <a href="https://www.gard.fr/" target="_blank"><img src="../assets/logos/le_gard.jpg" alt="Gard"></a>
+            <a href="https://www.saintchristollezales.fr/" target="_blank"><img src="../assets/logos/st_christol.jpg" alt="Saint-Christol"></a>
+            <a href="https://www.ac-montpellier.fr/" target="_blank"><img src="../assets/logos/logo_academie_montpellier.svg" alt="Académie"></a>
+            <a href="https://www.imt-mines-ales.fr/" target="_blank"><img src="../assets/logos/imt_mine.png" alt="IMT Mines"></a>
+            <a href="https://www.eurekales.fr/" target="_blank"><img src="../assets/logos/eurek_ales.png" alt="Eurék'Alès"></a>
+            <a href="https://cineplanet.fr/" target="_blank"><img src="../assets/logos/cineplanet.png" alt="cineplanet"></a>
+            <a href="https://www.top-office.com/" target="_blank"><img src="../assets/logos/top_office.png" alt="Top Office"></a>
+            <a href="https://www.radio-bangarang.fr/" target="_blank"><img src="../assets/logos/bangarang.png" alt="Bangarang"></a>
+            <a href="https://jacques-prevert.mon-ent-occitanie.fr/" target="_blank"><img src="../assets/logos/logo jaque prévert.png" alt="Prévert"></a>
+            <a href="#" target="_blank"><img src="../assets/img/cvl.jpeg" alt="CVL"></a>
+            <a href="https://museefermat.com/" target="_blank"><img src="../assets/img/fermat.png" alt="Fermat"></a>
+            <a href="https://www.europe-en-occitanie.eu/" target="_blank"><img src="../assets/logos/europe.jpg" alt="Europe"></a>
+            <a href="#" target="_blank"><img src="../assets/logos/MDL_LOGO.png" alt="MDL"></a> 
+            <a href="https://lesmathsenscene.fr/" target="_blank"><img src="../assets/logos/mathssalon.png" alt="Maths en Scène"></a> 
+            <a href="https://www.banquepopulaire.fr/sud/" target="_blank"><img src="../assets/logos/banque.jpg" alt="Banque Populaire"></a> 
+            <a href="https://www.canalbd.net/ales-bd/" target="_blank"><img src="../assets/logos/ales-bd.avif" alt="Alès BD"></a>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 ce.0301778v@ac-montpellier.fr</p>
+            </div>
+            <div class="footer-section">
+                <h3>Localisation</h3>
+                <p>📍 Lycée Jacques Prévert</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

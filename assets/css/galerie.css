@@ -1,0 +1,138 @@
+/* assets/css/galerie.css */
+
+/* --- HEADER GALERIE --- */
+/* Marge en haut pour éviter que le titre soit caché par la navbar fixe */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px; /* 120px en haut pour dégager la navbar */
+    text-align: center;
+}
+
+.gallery-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.gallery-header p {
+    font-size: 1.2rem;
+    color: #cbd5e1; /* Gris clair */
+    margin-bottom: 3rem;
+}
+
+/* --- GRILLE PHOTOS --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px; /* Hauteur uniforme pour toutes les photos */
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0, 0, 0, 0.2); /* Fond sombre avant chargement */
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 168, 255, 0.3);
+    z-index: 2;
+    border-color: var(--primary-color);
+}
+
+/* Animation d'apparition douce */
+.gallery-img {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BOUTON CHARGER PLUS --- */
+.load-more-btn {
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+    margin: 0 auto; /* Centré */
+    display: block;
+}
+
+.load-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 168, 255, 0.5);
+}
+
+/* --- SECTION VIDÉOS --- */
+.videos-section {
+    margin-top: 6rem;
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    flex: 1 1 500px; /* S'adapte : min 500px de large, sinon prend toute la largeur */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.video-player {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    aspect-ratio: 16/9; /* Force le format vidéo cinéma */
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .gallery-container { padding-top: 100px; } /* Ajustement marge mobile */
+    
+    .gallery-header h1 { font-size: 2.5rem; }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+        gap: 10px;
+    }
+    
+    .gallery-img { height: 150px; } /* Images plus petites sur mobile */
+    
+    .video-wrapper { flex: 1 1 100%; padding: 10px; } /* Vidéo pleine largeur */
+}
